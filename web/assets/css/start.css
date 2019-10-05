@@ -1,0 +1,246 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 12, 2019, 12:38:37 PM
+    Author     : tyleryork
+*/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  overflow-y: scroll;
+}
+
+body {
+  background: #272727;
+  
+}
+header {
+	background:	white;
+	min-height: 150px;
+}
+main {
+	min-height: 750px;
+}
+footer {
+	background:	white;
+	min-height: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: #3F51B5;
+  transition: .5s ease;
+}
+a:hover {
+  color: #179b77;
+}
+
+.form {
+  background: #747474;
+  padding: 10px;
+  max-width: 800px;
+  margin: 5px auto;
+  border-radius: 4px;
+  box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+}
+
+.tab-group {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  border-radius: 4px;
+}
+.tab-group:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.tab-group li a {
+  display: block;
+  text-decoration: none;
+  padding: 15px;
+  background: #FFE400;
+  color: #F7F9FB;
+  font-size: 20px;
+  float: left;
+  width: 50%;
+  text-align: center;
+  cursor: pointer;
+  transition: .5s ease;
+}
+.tab-group li a:hover {
+  background: #14A76C;
+  color: #747474;
+}
+.tab-group .active a {
+  background: #FF652F;
+  color: #F7F9FB;
+  
+}
+
+.tab-content > div:last-child {
+  display: none;
+}
+
+h1 {
+  text-align: center;
+  color: #ffffff;
+  font-weight: 300;
+  margin: 0 0 40px;
+}
+
+label {
+  position: absolute;
+  -webkit-transform: translateY(6px);
+          transform: translateY(6px);
+  left: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  transition: all 0.25s ease;
+  -webkit-backface-visibility: hidden;
+  pointer-events: none;
+  font-size: 22px;
+}
+label .req {
+  margin: 2px;
+  color: #FFFFFF;
+}
+fieldset {
+    border: none;
+}
+label.active {
+  -webkit-transform: translateY(50px);
+          transform: translateY(50px);
+  left: 2px;
+  font-size: 14px;
+}
+label.active .req {
+  opacity: 0;
+}
+
+label.highlight {
+  color: #272727;
+}
+
+input, textarea {
+  font-size: 22px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 5px 10px;
+  background: none;
+  background-image: none;
+  border: 1px solid #FFE400;
+  color: #FFFFFF;
+  border-radius: 4px;
+  transition: border-color .25s ease, box-shadow .25s ease;
+}
+input:focus, textarea:focus {
+  outline: 0;
+  border-color: #FF652F;
+  border-radius: 4px;
+}
+
+textarea {
+  border: 2px solid #a0b3b0;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+.field-wrap {
+  position: relative;
+  margin-bottom: 40px;
+}
+
+.two-row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.two-row > div {
+  float: left;
+  width: 48%;
+  margin-right: 4%;
+}
+.two-row > div:last-child {
+  margin: 0;
+}
+
+.two-rowl:after {
+	content: "";
+	display: table;
+	clear:	both;
+}
+.two-rowl > div {
+	float: left;
+	width: 70%;
+	margin-right:5%;
+}
+.two-rowl > div:last-child {
+	width:	25%;
+	margin:	0;
+}
+
+
+.two-rowr:after {
+	content: "";
+	display: table;
+	clear:	both;
+}
+.two-rowr > div {
+	float: left;
+	width: 25%;
+	margin-right:5%;
+}
+.two-rowr > div:last-child {
+	width:	70%;
+	margin:	0;
+}
+
+.three-row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+.three-row > div {
+	float: left;
+	width: 30%;
+	margin-right:	5%;
+}
+
+.three-row > div:last-child {
+	margin: 0;
+}
+
+.button {
+  border: 0;
+  outline: none;
+  border-radius: 4px;
+  padding: 15px 0;
+  font-size: 2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #FFE400;
+  color: #747474;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #14A76C;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+
+.forgot {
+  margin-top: -20px;
+  text-align: right;
+}
