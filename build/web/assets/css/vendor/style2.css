@@ -10714,7 +10714,7 @@ ul {
     background: url("../../images/auth/register.jpg") center center no-repeat;
     background-size: cover; }
   .auth.theme-one .auto-form-wrapper {
-    background: #fff;
+    background: #BFBFBF;
     padding: 10px 10px 10px;
     border-radius: 4px;
     -webkit-box-shadow: 0 -25px 37.7px 11.3px rgba(8, 143, 220, 0.07);
