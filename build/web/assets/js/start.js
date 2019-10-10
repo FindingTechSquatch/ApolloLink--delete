@@ -20,36 +20,28 @@ $(document).ready(function () {
                 label.removeClass('active highlight');
                 var value = $(this).val();
                 var name = $(this).attr("name");
-                if (name === "fn" || name === "ln" || name === "ct") {
+                if (name === "fn" || name === "ln") {
                     $(this).val(removeSpecials(removeNumbers(value)));
                 } else if (name === "un" || name === "em"){
                     $(this).val(removeSpaces(value));
-                } else if (name === "ph" || name === "zp") {
+                } else if (name === "ph") {
                     $(this).val(removeLower(removeSpecials(removeDashUnderscore(removeSpaces(removeUpper(value))))));
-                } else if (name === "a1" || name === "a2") {
-                    $(this).val(removeSpecials(value));
                 } else if (name === "st") {
                     $(this).val(removeNumbers(removeSpecials(removeDashUnderscore(value))));
-                } else if (name === "bt") {
-                    $(this).val(validDOB(removeDashUnderscore(removeLower(removeUpper(value)))));
-                }
+                } 
             } else {
                 label.addClass('active highlight');
                 var value = $(this).val();
                 var name = $(this).attr("name");
-                if (name === "fn" || name === "ln" || name === "ct") {
+                if (name === "fn" || name === "ln") {
                     $(this).val(removeSpecials(removeNumbers(value)));
                 } else if (name === "un" || name === "em"){
                     $(this).val(removeSpaces(value));
-                } else if (name === "ph" || name === "zp") {
+                } else if (name === "ph") {
                     $(this).val(removeLower(removeSpecials(removeDashUnderscore(removeSpaces(removeUpper(value))))));
-                } else if (name === "a1" || name === "a2") {
-                    $(this).val(removeSpecials(value));
                 } else if (name === "st") {
                     $(this).val(removeNumbers(removeSpecials(removeDashUnderscore(value))));
-                } else if (name === "bt") {
-                    $(this).val(validDOB(removeDashUnderscore(removeLower(removeUpper(value)))));
-                }
+                } 
             }
         } else if (e.type === 'blur') {
             if ($this.val() === '' && $(this).attr("name") !== "bt") {
@@ -147,16 +139,4 @@ $(document).ready(function () {
 
         return value;
     };
-    var validDOB = function (value) {
-        var specialArray = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")",
-            "+", "=", "{", "}", "[", "]", ":", ";", "'", "<", ">", ",", ".", "?",  "/\/", "|"];
-        specialArray.forEach(el => {
-            while (value.indexOf(el) !== -1) {
-                value = value.replace(el, "");
-            }
-        });
-
-        return value;
-    };
-
 });

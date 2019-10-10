@@ -10,7 +10,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>Star Admin Premium Bootstrap Admin Dashboard Template</title>
+        <title>ApolloLink</title>
 
         <link rel="stylesheet" href="assets/iconfonts/mdi/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
@@ -19,10 +19,9 @@
         <link rel="stylesheet" href="assets/css/vendor/vendor.bundle.base.css">
         <link rel="stylesheet" href="assets/css/vendor/vendor.bundle.addons.css">
         <link rel="stylesheet" href="assets/css/vendor/style2.css">
-        <link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,300,600' rel='stylesheet' type='text/css'>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="assets/css/start.css">
-        <link rel="shortcut icon" href="assets/images/favicon.png" />
+        <link rel="shortcut icon" href="assets/images/logo/grad/Black_Grad_Logo2.png" />
     </head>
     <body>
         <div class="container-scroller">
@@ -94,6 +93,12 @@
                                             </div>
                                             <div class="field-wrap">
                                                 <label>
+                                                    Phone Number<span class="req">*</span>
+                                                </label>
+                                                <input type="text" name="ph" length=10 autocomplete="off"/>
+                                            </div>
+                                            <div class="field-wrap">
+                                                <label>
                                                     Email Address<span class="req">*</span>
                                                 </label>
                                                 <input type="text" name="em" autocomplete="off"/>
@@ -139,7 +144,7 @@
                                                     <option value="My School is Not Listed">
                                                 </datalist>
                                             </div>
-                                            <button type="submit" class="button button-block"/>Get Started</button>
+                                            <button type="submit" disabled="true" class="button button-block"/>Get Started</button>
 
                                         </form>
 
@@ -157,8 +162,11 @@
                                 <li>
                                     <a href="#">Terms</a>
                                 </li>
+                                <li>
+                                    <a href="#">About</a>
+                                </li>
                             </ul>
-                            <p class="footer-text text-center">copyright © 2019 FindingTechSquatch. A division of The TRYHard Lab. All rights reserved.</p>
+                            <p class="footer-text text-center">&#169 2019 FindingTechSquatch. A division of The TRYHard Lab. All rights reserved.</p>
                         </div>
                     </div>
                 </div>
