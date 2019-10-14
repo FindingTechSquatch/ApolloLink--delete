@@ -11,7 +11,7 @@ and open the template in the editor.
 .card-list
 {
     margin-top: 25px;
-    
+
 }
 
 .card-ul
@@ -24,4 +24,21 @@ and open the template in the editor.
     color: #CC0000;
     font-weight: bold;
     font-size: 16px;
+}
+
+.card-clickable-title
+{
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    /*input has OS specific font-family*/
+    cursor: pointer;
+}
+.card-clickable {}
+.card-clickable:hover {
+    color: #BFBFBF;
+    background-color: #111111;
+}
+.card-clickable:hover     .card-clickable-title {
+    text-decoration: underline;
 }

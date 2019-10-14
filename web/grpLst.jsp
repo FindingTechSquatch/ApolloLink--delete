@@ -123,9 +123,13 @@
 
                         <div class="row">
                             <div class="col-md-8 grid-margin stretch-card">
-                                <div class="card">
+                                <div class="card card-clickable">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">Performance Group #1</h4>
+                                        <form action="grpPages" method="post">
+                                            <input type="hidden" name="grp" value="001">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Performance Group #1">
+                                        </form>
+                                        
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <ul class="card-ul">
                                                 <li>
@@ -160,7 +164,20 @@
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="row">
+                            <div class="col-md-12 grid-margin">
+                                <div class="card card-clickable">
+                                    <div class="card-body">
+                                        <form action="grpPages" method="post">
+                                            <input type="hidden" name="grp" value="000">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                        </form>
+                                        
+                                      
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- content-wrapper ends -->
