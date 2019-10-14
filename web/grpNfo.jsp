@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
         <link rel="stylesheet" href="assets/iconfonts/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/start.css">
+        <link rel="stylesheet" href="assets/css/card.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
         <!-- endinject -->
         <!-- plugin css for this page -->
         <!-- End plugin css for this page -->
@@ -39,7 +42,7 @@
                         <img src="assets/images/logo/grad/Black_Grad_Logo3_2.png" alt="logo" /> </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center">
-                    <h2> My Groups </h2>
+                    <h2> Performance Group #1 </h2>
                     <!-- TODO
                     <form class="ml-auto search-form d-none d-md-block" action="#">
                         <div class="form-group">
@@ -121,51 +124,128 @@
                         <!-- Page Title Header Ends-->
 
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
+                            <div class="col-md-12 grid-margin">
+                                <div class="card card-clickable">
+                                    <div class="card-body">
+                                        <form action="grpPages" method="post">
+                                            <input type="hidden" name="grp" value="000">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Register for Upcoming Events">
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #1</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
+                                        <h4 class="card-title mb-0"> Group Information </h4>
+                                        <div class="topcorner">
+                                            <a style="border-radius: 0px 0px 0px 4px;">Edit</a>
+                                        </div>
+
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Group Name</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Group Type</span></td>
+                                                        <td><input type="text" disabled="true" list="grpTypes" name="grpTyp">
+                                                            <datalist id="grpTypes">
+                                                                <option value="Marching Band">
+                                                                <option value="Choir">
+                                                                <option value="Orchestra">
+                                                            </datalist>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Group Size</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
+                                             
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 grid-margin stretch-card">
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body d-flex flex-column">
                                         <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 1, school 2, etc</p>
+                                            <h4 class="card-title mb-0">Group Leaders</h4>
+                                            <div class="topcorner">
+                                                <a style="border-radius: 0px 0px 0px 4px;">Edit</a>
+                                            </div>
+                                            <div class="card-list d-flex flex-column flex-lg-row">
+                                                <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <th class="card-li-title">First Name</th>
+                                                        <th class="card-li-title">Last Name</th>
+                                                        <th class="card-li-title">Title</th>
+                                                        <th class="card-li-title">Year</th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><input type="text" disabled="true" name="ldrFNAME01"</td>
+                                                        <td><input type="text" disabled="true" name="ldrLNAME"</td>
+                                                        <td><input type="text" disabled="true" name="ldrTITLE"</td>
+                                                        <td><input type="text" disabled="true" list="ldrYears" name="ldrYear">
+                                                            <datalist id="ldrYears">
+                                                                <option value="Freshman">
+                                                                <option value="Softmore">
+                                                                <option value="Junior">
+                                                                <option value="Senior"
+                                                            </datalist>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                    <button class="btn btn-dark btn-fw">Add</button>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
+                                            </div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        
+                        <div class="row">
+                            <div class="col-md-12 grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0"> Upcoming Events </h4>
+                                        <form action="grpPages" method="post">
+                                            <input type="hidden" name="grp" value="000">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-12 grid-margin">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0"> Past Events </h4>
+                                        <form action="grpPages" method="post">
+                                            <input type="hidden" name="grp" value="000">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                        </form>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
                     </div>
                     <!-- content-wrapper ends -->

@@ -7,7 +7,6 @@ and open the template in the editor.
     Created on : Oct 14, 2019, 11:18:04 AM
     Author     : mckay
 */
-
 .card-list
 {
     margin-top: 25px;
@@ -41,4 +40,9 @@ and open the template in the editor.
 }
 .card-clickable:hover     .card-clickable-title {
     text-decoration: underline;
+}
+
+th, td 
+{
+    padding: .5em;
 }

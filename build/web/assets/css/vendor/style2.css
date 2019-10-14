@@ -2385,13 +2385,13 @@ fieldset:disabled a.btn {
       box-shadow: 0 0 0 0.2rem rgba(218, 219, 220, 0.5); }
 
 .btn-dark {
-  color: #fff;
-  background-color: #252C46;
-  border-color: #252C46; }
+  color: #BFBFBF;
+  background-color: #CC0000;
+  border-color: #CC0000; }
   .btn-dark:hover {
-    color: #fff;
-    background-color: #181c2d;
-    border-color: #131725; }
+    color: #CC0000;
+    background-color: #111111;
+    border-color: #111111; }
   .btn-dark:focus, .btn-dark.focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgba(70, 76, 98, 0.5);
     box-shadow: 0 0 0 0.2rem rgba(70, 76, 98, 0.5); }
