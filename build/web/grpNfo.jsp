@@ -109,20 +109,9 @@
                         </li>
                     </ul>
                 </nav>
-                <!-- partial -->
                 <div class="main-panel">
                     <div class="content-wrapper">
-                        <!-- Page Title Header Starts-->
-                        <div class="row page-title-header">
-                            <div class="col-12">
-                                <div class="page-header">
-                                    <h4 class="page-title">School 1</h4>
-                                </div>
-                            </div>
-
-                        </div>
                         <!-- Page Title Header Ends-->
-
                         <div class="row">
                             <div class="col-md-12 grid-margin">
                                 <div class="card card-clickable">
@@ -150,11 +139,11 @@
                                                 <table>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Name</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text"  name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Type</span></td>
-                                                        <td><input type="text" disabled="true" list="grpTypes" name="grpTyp">
+                                                        <td><input class="input" type="text" disabled="true" list="grpTypes" name="grpTyp">
                                                             <datalist id="grpTypes">
                                                                 <option value="Marching Band">
                                                                 <option value="Choir">
@@ -164,7 +153,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Size</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Save">
@@ -192,10 +181,10 @@
                                                         <th class="card-li-title">Year</th>
                                                     </tr>
                                                     <tr>
-                                                        <td><input type="text" disabled="true" name="ldrFNAME01"</td>
-                                                        <td><input type="text" disabled="true" name="ldrLNAME"</td>
-                                                        <td><input type="text" disabled="true" name="ldrTITLE"</td>
-                                                        <td><input type="text" disabled="true" list="ldrYears" name="ldrYear">
+                                                        <td><input class="input" type="text" disabled="true" name="ldrFNAME01"</td>
+                                                        <td><input class="input" type="text" disabled="true" name="ldrLNAME"</td>
+                                                        <td><input class="input" type="text" disabled="true" name="ldrTITLE"</td>
+                                                        <td><input class="input" type="text" disabled="true" list="ldrYears" name="ldrYear">
                                                             <datalist id="ldrYears">
                                                                 <option value="Freshman">
                                                                 <option value="Softmore">
