@@ -17,6 +17,7 @@
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
         <link rel="stylesheet" href="assets/iconfonts/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/card.css">
         <!-- endinject -->
         <!-- plugin css for this page -->
         <!-- End plugin css for this page -->
@@ -175,19 +176,7 @@
                         <div class="row page-title-header">
                             <div class="col-12">
                                 <div class="page-header">
-                                    <h4 class="page-title">Dashboard</h4>
-                                    <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-                                        <ul class="quick-links">
-                                            <li><a href="#">ICE Market data</a></li>
-                                            <li><a href="#">Own analysis</a></li>
-                                            <li><a href="#">Historic market data</a></li>
-                                        </ul>
-                                        <ul class="quick-links ml-auto">
-                                            <li><a href="#">Settings</a></li>
-                                            <li><a href="#">Analytics</a></li>
-                                            <li><a href="#">Watchlist</a></li>
-                                        </ul>
-                                    </div>
+                                    <h4 class="page-title">Marching Band (Type Goes Here)</h4>
                                 </div>
                             </div>
 
@@ -195,80 +184,154 @@
                         <!-- Page Title Header Ends-->
 
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #1</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 grid-margin stretch-card">
+                            
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body d-flex flex-column">
                                         <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 1, school 2, etc</p>
+                                            <h4 class="card-title mb-0">Event Information</h4>
+                                            <div class="d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Name</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Host</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Type</span></td>
+                                                        <td><input type="text" disabled="true" list="grpTypes" name="grpTyp">
+                                                            <datalist id="grpTypes">
+                                                                <option value="Marching Band">
+                                                                <option value="Choir">
+                                                                <option value="Orchestra">
+                                                            </datalist>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Start</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">End</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Block Size</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Update">
+                                            </form>
+                                            </div>
                                         </div>
 
                                     </div>
                                 </div>
                             </div>
+                            <div class="col-md-6 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="wrapper">
+                                            <h4 class="card-title mb-0">Event Location</h4>
+                                            <div class="d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Location</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Address 1</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Address 2</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">City</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">State</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Update">
+                                            </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="wrapper">
+                                            <h4 class="card-title mb-0">Upcoming Events</h4>
+                                            <div class="d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <th></th>
+                                                    <th class="card-li-title">Start Date</th>
+                                                    <th class="card-li-title">End Date</th>
+                                                    <th class="card-li-title">Cost</th>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Early Registration</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Regular Registration</span></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Late Registration</span></td>
+                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Update">
+                                            </form>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                            
                         </div>
                         <div class="row">
                             <div class="col-md-8 grid-margin stretch-card">
                                 <div class="card">
-                                    <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #2</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
+                                    <div class="card-body d-flex flex-column">
+                                        <div class="wrapper">
+                                            <h4 class="card-title mb-0">Registered Performances</h4>
+                                            <div class="card-list d-flex flex-column flex-lg-row">
+                                            <ul class="card-ul">
+                                                <li>
+                                                    Event 1
+                                                </li>
+                                                <li>
+                                                    Event 2
+                                                </li>
+                                            </ul>
+                                            </div>
                                         </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -276,8 +339,17 @@
                                 <div class="card">
                                     <div class="card-body d-flex flex-column">
                                         <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 3, school 4, etc</p>
+                                            <h4 class="card-title mb-0">Blocks Available</h4>
+                                            <div class="card-list d-flex flex-column flex-lg-row">
+                                            <ul class="card-ul">
+                                                <li>
+                                                    Event 1
+                                                </li>
+                                                <li>
+                                                    Event 2
+                                                </li>
+                                            </ul>
+                                            </div>
                                         </div>
 
                                     </div>
@@ -290,8 +362,7 @@
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
                         <div class="container-fluid clearfix">
-                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright &#169; 2019 FindingTechSquatch. A division of the TRYHard Lab. All rights reserved.</span>
                             </span>
                         </div>
                     </footer>

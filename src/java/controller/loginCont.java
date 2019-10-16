@@ -29,7 +29,7 @@ public class loginCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/grpNfo.jsp";
+        String url = "/evtNfo.jsp";
         
                 getServletContext()
                 .getRequestDispatcher(url)
