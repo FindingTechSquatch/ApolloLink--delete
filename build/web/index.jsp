@@ -5,13 +5,17 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList"%>
+<%
+    ArrayList<String> er = (ArrayList) session.getAttribute("er");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <title>ApolloLink</title>
-
+        <!--Style Block-->
         <link rel="stylesheet" href="assets/iconfonts/mdi/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
@@ -21,6 +25,9 @@
         <link rel="stylesheet" href="assets/css/vendor/style2.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
         <link rel="stylesheet" href="assets/css/start.css">
+        <link rel="stylesheet" href="assets/css/card.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
+        <!--End Style Block-->
         <link rel="shortcut icon" href="assets/images/logo/grad/Black_Grad_Logo2.png" />
     </head>
     <body>
@@ -30,7 +37,7 @@
                     <div class="topcorner">
                         <a style="border-radius: 0px 0px 0px 4px;" href="#login">Event Manager Log In</a>
                     </div>
-                    <div class="row w-100">
+                    <div class="row w-100 topspace">
                         <div class="col-lg-4 mx-auto">
                             <div class="auto-form-wrapper form">
 
@@ -43,26 +50,34 @@
                                     <div id="login">
                                         <img src="assets/images/logo/grad/White_Grad_Vertical2.png" alt="logo" />
                                         <h1>Welcome Back!</h1>
-
-                                        <form action="/" method="post">
-
+                                        <div class="alert" ${hd}>
+                                            <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span>
+                                            <ul>
+                                                <% for (String e : er) {%>
+                                                <li>
+                                                    <%=e%>
+                                                </li>
+                                                <% }%>
+                                            </ul>
+                                        </div>
+                                        <form action="loginCont" method="post">
+                                            <input type="hidden" name="act" value="lg">
                                             <div class="field-wrap">
                                                 <label>
                                                     Email<span class="req">*</span>
                                                 </label>
-                                                <input type="email" autocomplete="off"/>
+                                                <input class="loginInput" name="us" type="text" autocomplete="off"/>
                                             </div>
-
                                             <div class="field-wrap">
                                                 <label>
                                                     Password<span class="req">*</span>
                                                 </label>
-                                                <input type="password" autocomplete="off"/>
+                                                <input class="loginInput" name="pw" type="password" autocomplete="off"/>
                                             </div>
                                             <!--TODO
                                             <p class="forgot"><a href="#">Forgot Password?</a></p>
                                             --><br><br>
-                                            <button class="button button-block"/>Log In</button>
+                                            <button type="submit" class="button button-block"/>Log In</button>
 
                                         </form>
 
@@ -72,22 +87,28 @@
                                     <div id="signup">
                                         <img src="assets/images/logo/grad/Black_Grad_Vertical2.png" alt="logo" />
                                         <h1>Sign Up</h1>
-
-                                        <form action="Init" method="post">
+                                        <div class="alert">
+                                            <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span>
+                                            <ul>
+                                                <li>Username Was Super Bad</li>
+                                                <li>Password Was Also Freaking Horrible</li>
+                                            </ul>
+                                        </div>
+                                        <form action="loginCont" method="post">
                                             <input type="hidden" name="action" value="n">
                                             <div class="two-row">
                                                 <div class="field-wrap">
                                                     <label>
                                                         First Name<span class="req">*</span>
                                                     </label>
-                                                    <input type="text"  name="fn" autocomplete="on" />
+                                                    <input class="loginInput" type="text"  name="fn" autocomplete="on" />
                                                 </div>
 
                                                 <div class="field-wrap">
                                                     <label>
                                                         Last Name<span class="req">*</span>
                                                     </label>
-                                                    <input type="text" name="ln" autocomplete="off"/>
+                                                    <input class="loginInput" type="text" name="ln" autocomplete="off"/>
                                                 </div>
 
                                             </div>
@@ -95,33 +116,37 @@
                                                 <label>
                                                     Phone Number<span class="req">*</span>
                                                 </label>
-                                                <input type="text" name="ph" length=10 autocomplete="off"/>
+                                                <input class="loginInput" type="text" name="ph" maxlength=10 autocomplete="off"/>
                                             </div>
                                             <div class="field-wrap">
                                                 <label>
                                                     Email Address<span class="req">*</span>
                                                 </label>
-                                                <input type="text" name="em" autocomplete="off"/>
+                                                <input class="loginInput" type="text" name="em" autocomplete="off"/>
                                             </div>
 
                                             <div class="field-wrap">
                                                 <label>
                                                     Password<span class="req">*</span>
                                                 </label>
-                                                <input type="password" name="pw" autocomplete="off"/>
+                                                <input class="loginInput" type="password" name="pw" autocomplete="off"/>
                                             </div>
+                                            <ul>
+                                                <li>Password needs to have stuff</li>
+                                                <li>can't be blank</li>
+                                            </ul>
                                             <div class="field-wrap">
                                                 <label>
                                                     Re-Enter Password<span class="req">*</span>
                                                 </label>
-                                                <input type="password" name="rpw" autocomplete="off"/>
+                                                <input class="loginInput" type="password" name="rpw" autocomplete="off"/>
                                             </div>
                                             <div class="field-wrap">
 
                                                 <label>
                                                     School<span class="req">*</span>
                                                 </label>
-                                                <input type="text" list="schools" name="sl" autocomplete="on" />
+                                                <input class="loginInput" type="text" list="schools" name="sl" autocomplete="on" />
 
                                                 <datalist id="schools">
                                                     <option value="Alabama"><option value="Alaska"><option value="Arizona">

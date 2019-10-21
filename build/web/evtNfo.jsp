@@ -195,15 +195,15 @@
                                                 <table>
                                                     <tr>
                                                         <td><span class="card-li-title">Name</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Host</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Type</span></td>
-                                                        <td><input type="text" disabled="true" list="grpTypes" name="grpTyp">
+                                                        <td><input class="input" type="text" disabled="true" list="grpTypes" name="grpTyp">
                                                             <datalist id="grpTypes">
                                                                 <option value="Marching Band">
                                                                 <option value="Choir">
@@ -213,15 +213,15 @@
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Start</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">End</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Block Size</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Update">
@@ -242,23 +242,23 @@
                                                 <table>
                                                     <tr>
                                                         <td><span class="card-li-title">Location</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Address 1</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Address 2</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">City</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">State</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
                                                     </tr>
                                                     
                                                 </table>
@@ -287,21 +287,21 @@
                                                     <th class="card-li-title">Cost</th>
                                                     <tr>
                                                         <td><span class="card-li-title">Early Registration</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Regular Registration</span></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Late Registration</span></td>
-                                                        <td><input type="text" disabled="true" name="grpSz"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
-                                                        <td><input type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpNm"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Update">

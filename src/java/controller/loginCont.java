@@ -5,12 +5,20 @@
  */
 package controller;
 
+import encrypt.ec;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Set;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import obj.uBase;
+import validation.IVString;
 
 /**
  *
@@ -29,9 +37,66 @@ public class loginCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/evtNfo.jsp";
-        
-                getServletContext()
+        String url = "/index.jsp";
+
+        HttpSession session = request.getSession();
+
+        String action = request.getParameter("act");
+        if (action == null) {
+            action = "n";
+        }
+
+        if (action.equalsIgnoreCase("n")) { //brand new, just accessing the site
+            session.setAttribute("hd", "hidden");
+            ArrayList<String> lgError = new ArrayList();
+            session.setAttribute("er", lgError);
+        } else if (action.equalsIgnoreCase("s")) { //sign up
+
+        } else if (action.equalsIgnoreCase("lg")) { //regular log in
+            uBase cus = new uBase();
+            ArrayList<String> lgError = new ArrayList();
+
+            String us = request.getParameter("us");
+            String pw = request.getParameter("pw");
+            boolean lg1, lg2, lg3 = false;
+            lg1 = IVString.ContainsText(us);
+            lg2 = IVString.MatchesRegex(us, IVString.regexLib("email"));
+            lg3 = IVString.ContainsText(pw);
+
+            if (lg1 && lg2 && lg3) {
+                url = "/testSuccess.jsp";
+                
+                cus.setUus(us);
+                cus.setHus(ec.EC_dus(us));
+                cus.setHpw(ec.EC_dpw(us));
+                session.setAttribute("us", cus.getUus());
+                session.setAttribute("pw", cus.getHpw());
+            } else {
+                url = "/index.jsp";
+                if (!lg1 || !lg2) {
+                    session.setAttribute("hd","");
+                    if (!lg1) {
+                        lgError.add("An email was not entered.");
+                    } else if (!lg2) {
+                        lgError.add("An invalid email was entered.");
+                    }
+                }
+                if (!lg3) {
+                    lgError.add("A password was not entered.");
+                }
+                session.setAttribute("er", lgError);
+
+            }
+
+        } else if (action.equalsIgnoreCase("e")) { //clicks event manager button
+
+        } else if (action.equalsIgnoreCase("f")) { //event manager login
+
+        } else {
+
+        }
+
+        getServletContext()
                 .getRequestDispatcher(url)
                 .forward(request, response);
     }
