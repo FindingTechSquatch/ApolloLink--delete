@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
         <link rel="stylesheet" href="assets/iconfonts/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/start.css">
+        <link rel="stylesheet" href="assets/css/card.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
         <!-- endinject -->
         <!-- plugin css for this page -->
         <!-- End plugin css for this page -->
@@ -39,7 +42,7 @@
                         <img src="assets/images/logo/grad/Black_Grad_Logo3_2.png" alt="logo" /> </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center">
-                    <h2> My Groups </h2>
+                    <h2> Account Information </h2>
                     <!-- TODO
                     <form class="ml-auto search-form d-none d-md-block" action="#">
                         <div class="form-group">
@@ -109,58 +112,95 @@
                 <!-- partial -->
                 <div class="main-panel">
                     <div class="content-wrapper">
-                        <!-- Page Title Header Starts-->
-                        <div class="row page-title-header">
-                            <div class="col-12">
-                                <div class="page-header">
-                                    <h4 class="page-title">School 1</h4>
-                                </div>
-                            </div>
-
-                        </div>
                         <!-- Page Title Header Ends-->
-
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #1</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
+                                        <h4 class="card-title mb-0"> User Information </h4>
+                                        <div class="topcorner">
+                                            <a style="border-radius: 0px 0px 0px 4px;">Edit</a>
+                                        </div>
+
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">First Name</span></td>
+                                                        <td><input class="input" type="text"  name="fstNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Last Name</span></td>
+                                                        <td><input class="input" type="text"  name="lstNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Email Address</span></td>
+                                                        <td><input class="input" type="text"  name="emAdd"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Phone Number</span></td>
+                                                        <td><input class="input" type="text"  name="phNum"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
+                                             
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 grid-margin stretch-card">
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
-                                    <div class="card-body d-flex flex-column">
-                                        <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 1, school 2, etc</p>
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0"> School Information </h4>
+                                        <div class="topcorner">
+                                            <a style="border-radius: 0px 0px 0px 4px;">Edit</a>
                                         </div>
 
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <form action="grpPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">School Name</span></td>
+                                                        <td><input class="input" type="text"  name="schNm"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Address 1</span></td>
+                                                        <td><input class="input" type="text"  name="sAdd1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Address 2</span></td>
+                                                        <td><input class="input" type="text"  name="sAdd2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">City</span></td>
+                                                        <td><input class="input" type="text"  name="city"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">State</span></td>
+                                                        <td><input class="input" type="text"  name="state"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">ZIP Code</span></td>
+                                                        <td><input class="input" type="text"  name="zip"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Class Size</span></td>
+                                                        <td><input class="input" type="text"  name="clsSz"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Phone Number</span></td>
+                                                        <td><input class="input" type="text"  name="sPhNum"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Logo</span></td>
+                                                        <td><input class="input" type="text"  name="sLogo"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
+                                             
+                                        </div>
                                     </div>
                                 </div>
                             </div>
