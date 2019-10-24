@@ -37,7 +37,7 @@ public class loginCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/updNfo.jsp";
+        String url = "/index.jsp";
 
         HttpSession session = request.getSession();
 
