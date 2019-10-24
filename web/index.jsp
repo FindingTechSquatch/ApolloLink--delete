@@ -29,6 +29,7 @@
         <link rel="stylesheet" href="assets/css/buttons.css">
         <!--End Style Block-->
         <link rel="shortcut icon" href="assets/images/logo/grad/Black_Grad_Logo2.png" />
+        
     </head>
     <body>
         <div class="container-scroller">
@@ -131,10 +132,6 @@
                                                 </label>
                                                 <input class="loginInput" type="password" name="pw" autocomplete="off"/>
                                             </div>
-                                            <ul>
-                                                <li>Password needs to have stuff</li>
-                                                <li>can't be blank</li>
-                                            </ul>
                                             <div class="field-wrap">
                                                 <label>
                                                     Re-Enter Password<span class="req">*</span>
@@ -208,6 +205,7 @@
         <script src="assets/js/vendor/off-canvas.js"></script>
         <script src="assets/js/vendor/misc.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-        <script  src="assets/js/start.js"></script>
+        <script src="assets/js/start.js"></script>
+
         <!-- endinject -->
     </body>

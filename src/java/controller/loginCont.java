@@ -50,6 +50,7 @@ public class loginCont extends HttpServlet {
             session.setAttribute("hd", "hidden");
             ArrayList<String> lgError = new ArrayList();
             session.setAttribute("er", lgError);
+            
         } else if (action.equalsIgnoreCase("s")) { //sign up
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in

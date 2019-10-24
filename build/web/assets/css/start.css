@@ -265,7 +265,7 @@ textarea {
     display: inline-block;
     color: #111111;
     font-weight: 400;
-    text-align: center;
+    text-align: left;
     background-color: transparent;
     border: 1.5px solid #f8f8f8;
     padding: 0.4rem 1rem;
