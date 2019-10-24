@@ -114,7 +114,7 @@
                     <div class="content-wrapper">
                         <!-- Page Title Header Ends-->
                         <div class="row">
-                            <div class="col-md-6 grid-margin stretch-card">
+                            <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title mb-0"> User Information </h4>
@@ -123,7 +123,7 @@
                                         </div>
 
                                         <div class="card-list d-flex flex-column flex-lg-row">
-                                            <form action="grpPages" method="post">
+                                            <form action="updNfoPages" method="post">
                                                 <table>
                                                     <tr>
                                                         <td><span class="card-li-title">First Name</span></td>
@@ -149,64 +149,73 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-6 grid-margin stretch-card">
+                            
+                            <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title mb-0"> School Information </h4>
                                         <div class="topcorner">
                                             <a style="border-radius: 0px 0px 0px 4px;">Edit</a>
                                         </div>
-
                                         <div class="card-list d-flex flex-column flex-lg-row">
-                                            <form action="grpPages" method="post">
+                                            <form action="updNfoPages" method="post">
                                                 <table>
                                                     <tr>
-                                                        <td><span class="card-li-title">School Name</span></td>
-                                                        <td><input class="input" type="text"  name="schNm"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Address 1</span></td>
-                                                        <td><input class="input" type="text"  name="sAdd1"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Address 2</span></td>
-                                                        <td><input class="input" type="text"  name="sAdd2"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">City</span></td>
-                                                        <td><input class="input" type="text"  name="city"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">State</span></td>
-                                                        <td><input class="input" type="text"  name="state"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">ZIP Code</span></td>
-                                                        <td><input class="input" type="text"  name="zip"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Class Size</span></td>
-                                                        <td><input class="input" type="text"  name="clsSz"></td>
+                                                        <th><span class="card-li-title">School Name</span></th>
+                                                        <th><input class="input" type="text"  name="schNm"></th>
+                                                        <th><span class="card-li-title">          </span></th>
+                                                        <th><span class="card-li-title">Address 1</span></th>
+                                                        <th><input class="input" type="text"  name="sAdd1"></th>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Phone Number</span></td>
                                                         <td><input class="input" type="text"  name="sPhNum"></td>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">Address 2</span></td>
+                                                        <td><input class="input" type="text"  name="sAdd2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Class Size</span></td>
+                                                        <td><input class="input" type="text"  name="clsSz"></td>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">City</span></td>
+                                                        <td><input class="input" type="text"  name="city"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Logo</span></td>
-                                                        <td><input class="input" type="text"  name="sLogo"></td>
+                                                        <td><input class="input" type="file"  name="sLogo"></td>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">State</span></td>
+                                                        <td><input class="input" type="text"  name="state"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">ZIP Code</span></td>
+                                                        <td><input class="input" type="text"  name="zip"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Save">
                                             </form>
-                                             
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div>    
+                            <div class="row">
+                                <div class="col-md-12 grid-margin">
+                                    <div class="card card-clickable">
+                                        <div class="card-body">
+                                            <form action="updNfoPages" method="post">
+                                                <input type="hidden" name="schl" value="000">
+                                                <input type="submit" class="card-clickable-title card-title mb-0" value="Add New School">
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         
-
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
