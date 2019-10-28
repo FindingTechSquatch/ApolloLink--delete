@@ -190,6 +190,7 @@
                             </ul>
                             <p class="footer-text text-center">&#169 2019 FindingTechSquatch. A division of The TRYHard Lab. All rights reserved.</p>
                         </div>
+                                            
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
