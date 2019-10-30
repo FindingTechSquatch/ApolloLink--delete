@@ -42,6 +42,21 @@ body {
     border-radius: 0px 0px 0px 4px;
 
 }
+
+.topcheck
+{
+    position:absolute;
+    top:0;
+    right:0;
+    padding: 5px;
+    float: left;
+    width: 10%;
+    min-width:  82px;
+    text-align: center;
+    cursor: pointer;
+    transition: .5s ease;
+    border-radius: 0px 0px 0px 4px;
+}
 a {
     text-decoration: none;
     color: #F8F8F8;

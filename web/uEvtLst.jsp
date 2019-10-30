@@ -1,7 +1,7 @@
 <%-- 
-    Document   : index
-    Created on : Oct 2, 2019, 12:07:38 PM
-    Author     : tyleryork
+    Document   : uEvtLst
+    Created on : Oct 28, 2019, 12:07:38 PM
+    Author     : McKayleigh Polenske
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -17,7 +17,9 @@
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
         <link rel="stylesheet" href="assets/iconfonts/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/start.css">
         <link rel="stylesheet" href="assets/css/card.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
         <!-- endinject -->
         <!-- plugin css for this page -->
         <!-- End plugin css for this page -->
@@ -33,13 +35,14 @@
         <div class="container-scroller">
             <!-- partial:partials/_navbar.html -->
             <nav class="navbar default-layout col-lg-12 col-12 p-0 fixed-top d-flex flex-row">
-                <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center" style="background:#111111">
+                <div class="text-center navbar-brand-wrapper d-flex align-items-top justify-content-center">
                     <a class="navbar-brand brand-logo" href="index.html">
-                        <img src="assets/images/logo/grad/White_Grad_Horizontal2.png" alt="logo" /> </a>
+                        <img src="assets/images/logo/grad/Black_Grad_Horizontal3_2.png" alt="logo" /> </a>
                     <a class="navbar-brand brand-logo-mini" href="index.html">
-                        <img src="assets/images/logo/grad/White_Grad_Logo2.png" alt="logo" /> </a>
+                        <img src="assets/images/logo/grad/Black_Grad_Logo3_2.png" alt="logo" /> </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center">
+                    <h2> Available Upcoming Events </h2>
                     <!-- TODO
                     <form class="ml-auto search-form d-none d-md-block" action="#">
                         <div class="form-group">
@@ -57,6 +60,7 @@
                                     <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                                 </div>
                                 <a class="dropdown-item">User Settings<i class="dropdown-item-icon ti-dashboard"></i></a>
+                                <a class="dropdown-item">School Settings<i class="dropdown-item-icon ti-comment-alt"></i></a>
                                 <a class="dropdown-item">Contact Us<i class="dropdown-item-icon ti-comment-alt"></i></a>
                                 <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-location-arrow"></i></a>
                                 <!--TODO
@@ -76,19 +80,19 @@
             <!-- partial -->
             <div class="container-fluid page-body-wrapper">
                 <!-- partial:partials/_sidebar.html -->
-                <nav class="evtsidebar sidebar-offcanvas" id="sidebar">
+                <nav class="sidebar sidebar-offcanvas" id="sidebar">
                     <ul class="nav">
                         <li class="nav-item nav-category">Main Menu</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="evtLst.jsp">
+                            <a class="nav-link" href="grpLst.jsp">
                                 <i class="menu-icon typcn typcn-document-text"></i>
-                                <span class="menu-title">My Events</span>
+                                <span class="menu-title">My Groups</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="evtNfo.jsp">
+                            <a class="nav-link" href="grpAdd.jsp">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">Add Event</span>
+                                <span class="menu-title">Add Group</span>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -97,81 +101,127 @@
                                 <span class="menu-title">Upcoming Events</span>
                             </a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">
+                                <i class="menu-icon typcn typcn-bell"></i>
+                                <span class="menu-title">Event Results</span>
+                            </a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- partial -->
                 <div class="main-panel">
                     <div class="content-wrapper">
-                        <!-- Page Title Header Starts-->
                         <div class="row page-title-header">
                             <div class="col-12">
                                 <div class="page-header">
-                                    <h4 class="page-title">10/12/19 - 10/13/19</h4>
+                                    <h4 class="page-title">10/12/19</h4>
                                 </div>
                             </div>
-
                         </div>
                         <!-- Page Title Header Ends-->
-
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
-                                <div class="card card-clickable">
+                            <div class="col-md-3 grid-margin stretch-card">
+                                <div class="card">
                                     <div class="card-body">
-                                        <form action="grpPages" method="post">
-                                            <input type="hidden" name="grp" value="001">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Event #1">
-                                        </form>
-                                        
+                                        <div class="topcheck">
+                                            <input class="input" type="checkbox" id="events" name="event1">
+                                            <label for="events">Event1</label>
+                                        </div>
+                                        <h4 class="card-title mb-0"> Title </h4>
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <ul class="card-ul">
                                                 <li>
-                                                    <span class="card-li-title">Type:</span> Marching Band
+                                                    <span class="card-li-title">Host:</span> Host1
                                                 </li>
                                                 <li>
-                                                    <span class="card-li-title">Location:</span> Omaha Burke Stadium
+                                                    <span class="card-li-title">City:</span> Omaha
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
+                                             
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 grid-margin stretch-card">
+                            <div class="col-md-3 grid-margin stretch-card">
                                 <div class="card">
-                                    <div class="card-body d-flex flex-column">
-                                        <div class="wrapper">
-                                            <h4 class="card-title mb-0">Registered Schools</h4>
-                                            <div class="card-list d-flex flex-column flex-lg-row">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0"> Title </h4>
+                                        <div class="topcorner" input type="checkbox">
+                                            <input type="checkbox" class="btn btn-dark btn-fw" value="choose">
+                                        </div>
+
+                                        <div class="card-list d-flex flex-column flex-lg-row">
                                             <ul class="card-ul">
                                                 <li>
-                                                    School 1
+                                                    <span class="card-li-title">Host:</span> Host2
                                                 </li>
                                                 <li>
-                                                    School 2
+                                                    <span class="card-li-title">City:</span> Omaha
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
-                                            </div>
+                                             
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3 grid-margin stretch-card">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h4 class="card-title mb-0"> Title </h4>
+                                        <div class="topcorner" input type="checkbox">
+                                            <input type="checkbox" class="btn btn-dark btn-fw" value="choose">
                                         </div>
 
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <ul class="card-ul">
+                                                <li>
+                                                    <span class="card-li-title">Host:</span> Host3
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">City:</span> Omaha
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">State:</span> NE
+                                                </li>
+                                            </ul>
+                                             
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12 grid-margin">
-                                <div class="card card-clickable">
+                            <div class="col-md-3 grid-margin stretch-card">
+                                <div class="card">
                                     <div class="card-body">
-                                        <form action="grpPages" method="post">
-                                            <input type="hidden" name="grp" value="000">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Event">
-                                        </form>
-                                        
-                                      
+                                        <h4 class="card-title mb-0"> Title </h4>
+                                        <div class="topcorner" input type="checkbox">
+                                            <input type="checkbox" class="btn btn-dark btn-fw" value="choose">
+                                        </div>
+
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <ul class="card-ul">
+                                                <li>
+                                                    <span class="card-li-title">Host:</span> Host4
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">City:</span> Omaha
+                                                </li>
+                                                <li>
+                                                    <span class="card-li-title">State:</span> NE
+                                                </li>
+                                            </ul>
+                                             
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                    </div>
+                            
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
