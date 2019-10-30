@@ -102,7 +102,7 @@
                                             </ul>
                                         </div>
                                         <form action="loginCont" method="post">
-                                            <input type="hidden" name="action" value="n">
+                                            <input type="hidden" name="action" value="su">
                                             <div class="two-row">
                                                 <div class="field-wrap">
                                                     <label>

@@ -55,7 +55,15 @@ public class loginCont extends HttpServlet {
             session.setAttribute("er2", lgError1);
 
             //needs to load schools
-        } else if (action.equalsIgnoreCase("s")) { //sign up
+        } else if (action.equalsIgnoreCase("su")) { //sign up
+            session.setAttribute("hd1", "hidden");
+            session.setAttribute("hd2", "hidden");
+            ArrayList<String> lgError1 = new ArrayList();
+            ArrayList<String> lgError2 = new ArrayList();
+            session.setAttribute("er1", lgError1);
+            session.setAttribute("er2", lgError1);
+            
+            
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in
             uBase cus = new uBase();
