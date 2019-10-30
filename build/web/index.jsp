@@ -7,14 +7,17 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList"%>
 <%
-    ArrayList<String> er = (ArrayList) session.getAttribute("er");
+    ArrayList<String> er1 = (ArrayList) session.getAttribute("er1");
+%>
+<%
+    ArrayList<String> er2 = (ArrayList) session.getAttribute("er2");
 %>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-        <title>ApolloLink</title>
+        <title>ApolloLink Log In/Sign Up</title>
         <!--Style Block-->
         <link rel="stylesheet" href="assets/iconfonts/mdi/css/materialdesignicons.min.css">
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
@@ -29,14 +32,14 @@
         <link rel="stylesheet" href="assets/css/buttons.css">
         <!--End Style Block-->
         <link rel="shortcut icon" href="assets/images/logo/grad/Black_Grad_Logo2.png" />
-        
+
     </head>
     <body>
         <div class="container-scroller">
             <div class="container-fluid page-body-wrapper full-page-wrapper">
                 <div class="content-wrapper d-flex align-items-center auth auth-bg-1 theme-one">
                     <div class="topcorner">
-                        <a style="border-radius: 0px 0px 0px 4px;" href="#login">Event Manager Log In</a>
+                        <a style="border-radius: 0px 0px 0px 4px;" href="loginCont?act=ev">Event Manager Log In</a>
                     </div>
                     <div class="row w-100 topspace">
                         <div class="col-lg-4 mx-auto">
@@ -51,10 +54,10 @@
                                     <div id="login">
                                         <img src="assets/images/logo/grad/White_Grad_Vertical2.png" alt="logo" />
                                         <h1>Welcome Back!</h1>
-                                        <div class="alert" ${hd}>
+                                        <div class="alert" ${hd1}>
                                             <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span>
                                             <ul>
-                                                <% for (String e : er) {%>
+                                                <% for (String e : er1) {%>
                                                 <li>
                                                     <%=e%>
                                                 </li>
@@ -88,11 +91,14 @@
                                     <div id="signup">
                                         <img src="assets/images/logo/grad/Black_Grad_Vertical2.png" alt="logo" />
                                         <h1>Sign Up</h1>
-                                        <div class="alert">
+                                        <div class="alert" ${hd2}>
                                             <span class="closebtn" onclick="this.parentElement.style.display = 'none';">&times;</span>
                                             <ul>
-                                                <li>Username Was Super Bad</li>
-                                                <li>Password Was Also Freaking Horrible</li>
+                                                <% for (String e : er2) {%>
+                                                <li>
+                                                    <%=e%>
+                                                </li>
+                                                <% }%>
                                             </ul>
                                         </div>
                                         <form action="loginCont" method="post">
@@ -190,6 +196,7 @@
                             </ul>
                             <p class="footer-text text-center">&#169 2019 FindingTechSquatch. A division of The TRYHard Lab. All rights reserved.</p>
                         </div>
+
                     </div>
                 </div>
                 <!-- content-wrapper ends -->
@@ -206,6 +213,7 @@
         <script src="assets/js/vendor/misc.js"></script>
         <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
         <script src="assets/js/start.js"></script>
+
 
         <!-- endinject -->
     </body>

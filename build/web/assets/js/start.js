@@ -59,29 +59,18 @@ $(document).ready(function () {
         $(target).fadeIn(1000);
 
     });
-    var setSignup = function() {
-        document.getElementById('signupbutton').classList.add('active');
-        document.getElementById('loginbutton').classList.remove('active');
-        //$(this).parent().addClass('active');
-        //$(this).parent().siblings().removeClass('active');
 
-        //target = $(this).attr('href');
 
-        //$('.tab-content > div').not(target).hide();
-
-        //$(target).fadeIn(1000);
-    };
-
-    var fullCheck = function(value, name) {
-                if (name === "fn" || name === "ln") {
-                    value = removeSpecials(removeNumbers(value));
-                } else if (name === "un" || name === "em" || name === "us") {
-                    value = removeSpaces(value);
-                } else if (name === "ph") {
-                    value = removeLower(removeSpecials(removeDashUnderscore(removeSpaces(removeUpper(value)))));
-                } else if (name === "sh") {
-                    value = removeNumbers(removeSpecials(removeDashUnderscore(value)));
-                }
+    var fullCheck = function (value, name) {
+        if (name === "fn" || name === "ln") {
+            value = removeSpecials(removeNumbers(value));
+        } else if (name === "un" || name === "em" || name === "us") {
+            value = removeSpaces(value);
+        } else if (name === "ph") {
+            value = removeLower(removeSpecials(removeDashUnderscore(removeSpaces(removeUpper(value)))));
+        } else if (name === "sh") {
+            value = removeNumbers(removeSpecials(removeDashUnderscore(value)));
+        }
         return value;
     };
 

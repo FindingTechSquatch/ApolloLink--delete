@@ -315,7 +315,9 @@ textarea {
   cursor: pointer;
   transition: 0.3s;
 }
-
+.tab-content2 {
+  
+}
 /* When moving the mouse over the close button */
 .closebtn:hover {
   color: black;
