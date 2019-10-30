@@ -37,7 +37,7 @@ public class loginCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/updNfo.jsp";
+        String url = "/index.jsp";
 
         HttpSession session = request.getSession();
 
@@ -47,15 +47,24 @@ public class loginCont extends HttpServlet {
         }
 
         if (action.equalsIgnoreCase("n")) { //brand new, just accessing the site
-            session.setAttribute("hd", "hidden");
-            ArrayList<String> lgError = new ArrayList();
-            session.setAttribute("er", lgError);
-            
+            session.setAttribute("hd1", "hidden");
+            session.setAttribute("hd2", "hidden");
+            ArrayList<String> lgError1 = new ArrayList();
+            ArrayList<String> lgError2 = new ArrayList();
+            session.setAttribute("er1", lgError1);
+            session.setAttribute("er2", lgError1);
+
+            //needs to load schools
         } else if (action.equalsIgnoreCase("s")) { //sign up
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in
             uBase cus = new uBase();
-            ArrayList<String> lgError = new ArrayList();
+            session.setAttribute("hd1", "hidden");
+            session.setAttribute("hd2", "hidden");
+            ArrayList<String> lgError1 = new ArrayList();
+            ArrayList<String> lgError2 = new ArrayList();
+            session.setAttribute("er1", lgError1);
+            session.setAttribute("er2", lgError1);
 
             String us = request.getParameter("us");
             String pw = request.getParameter("pw");
@@ -65,8 +74,8 @@ public class loginCont extends HttpServlet {
             lg3 = IVString.ContainsText(pw);
 
             if (lg1 && lg2 && lg3) {
-                url = "/testSuccess.jsp";
-                
+                url = "/grpLst.jsp";
+
                 cus.setUus(us);
                 cus.setHus(ec.EC_dus(us));
                 cus.setHpw(ec.EC_dpw(us));
@@ -75,26 +84,64 @@ public class loginCont extends HttpServlet {
             } else {
                 url = "/index.jsp";
                 if (!lg1 || !lg2) {
-                    session.setAttribute("hd","");
+                    session.setAttribute("hd1", "");
                     if (!lg1) {
-                        lgError.add("An email was not entered.");
+                        lgError1.add("An email was not entered.");
                     } else if (!lg2) {
-                        lgError.add("An invalid email was entered.");
+                        lgError1.add("An invalid email was entered.");
                     }
                 }
                 if (!lg3) {
-                    lgError.add("A password was not entered.");
+                    lgError1.add("A password was not entered.");
                 }
-                session.setAttribute("er", lgError);
+                session.setAttribute("er1", lgError1);
 
             }
 
-        } else if (action.equalsIgnoreCase("e")) { //clicks event manager button
+        } else if (action.equalsIgnoreCase("ev")) { //clicks event manager button
+            url = "/evtlgn.jsp";
+            session.setAttribute("hd1", "hidden");
+            ArrayList<String> lgError1 = new ArrayList();
+            session.setAttribute("er1", lgError1);
 
-        } else if (action.equalsIgnoreCase("f")) { //event manager login
+        } else if (action.equalsIgnoreCase("elg")) { //event manager login
+            url = "/evtLst.jsp";
+            session.setAttribute("hd1", "hidden");
+            ArrayList<String> lgError1 = new ArrayList();
+            session.setAttribute("er1", lgError1);
+            uBase cus = new uBase();
+            String us = request.getParameter("us");
+            String pw = request.getParameter("pw");
+            boolean lg1, lg2, lg3 = false;
+            lg1 = IVString.ContainsText(us);
+            lg2 = IVString.MatchesRegex(us, IVString.regexLib("email"));
+            lg3 = IVString.ContainsText(pw);
 
+            if (lg1 && lg2 && lg3) {
+                url = "/evtLst.jsp";
+
+                cus.setUus(us);
+                cus.setHus(ec.EC_dus(us));
+                cus.setHpw(ec.EC_dpw(us));
+                session.setAttribute("us", cus.getUus());
+                session.setAttribute("pw", cus.getHpw());
+            } else {
+                url = "/evtlgn.jsp";
+                if (!lg1 || !lg2) {
+                    session.setAttribute("hd1", "");
+                    if (!lg1) {
+                        lgError1.add("An email was not entered.");
+                    } else if (!lg2) {
+                        lgError1.add("An invalid email was entered.");
+                    }
+                }
+                if (!lg3) {
+                    lgError1.add("A password was not entered.");
+                }
+                session.setAttribute("er1", lgError1);
+            }
         } else {
-
+            url = "index.jsp";
         }
 
         getServletContext()
