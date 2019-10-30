@@ -211,7 +211,7 @@
                                         <h4 class="card-title mb-0"> Upcoming Events </h4>
                                         <form action="grpPages" method="post">
                                             <input type="hidden" name="grp" value="000">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Event 1">
                                         </form>
 
 
@@ -227,7 +227,7 @@
                                         <h4 class="card-title mb-0"> Past Events </h4>
                                         <form action="grpPages" method="post">
                                             <input type="hidden" name="grp" value="000">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Event -1">
                                         </form>
 
 

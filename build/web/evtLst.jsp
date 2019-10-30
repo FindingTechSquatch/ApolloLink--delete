@@ -57,7 +57,7 @@
                                     <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                                 </div>
                                 <a class="dropdown-item">User Settings<i class="dropdown-item-icon ti-dashboard"></i></a>
-                                <a class="dropdown-item"><i class="dropdown-item-icon ti-comment-alt"></i></a>
+                                <a class="dropdown-item">Contact Us<i class="dropdown-item-icon ti-comment-alt"></i></a>
                                 <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-location-arrow"></i></a>
                                 <!--TODO
                                 <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
@@ -78,94 +78,24 @@
                 <!-- partial:partials/_sidebar.html -->
                 <nav class="evtsidebar sidebar-offcanvas" id="sidebar">
                     <ul class="nav">
-                        <li class="nav-item nav-profile">
-                            <a href="#" class="nav-link">
-                                <div class="profile-image">
-                                    <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
-                                    <div class="dot-indicator bg-success"></div>
-                                </div>
-                                <div class="text-wrapper">
-                                    <p class="profile-name">Allen Moreno</p>
-                                    <p class="designation">Premium user</p>
-                                </div>
-                            </a>
-                        </li>
                         <li class="nav-item nav-category">Main Menu</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="evtLst.jsp">
                                 <i class="menu-icon typcn typcn-document-text"></i>
-                                <span class="menu-title">Dashboard</span>
+                                <span class="menu-title">My Events</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                                <i class="menu-icon typcn typcn-coffee"></i>
-                                <span class="menu-title">Basic UI Elements</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="ui-basic">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/forms/basic_elements.html">
+                            <a class="nav-link" href="evtNfo.jsp">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">Form elements</span>
+                                <span class="menu-title">Add Event</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/charts/chartjs.html">
+                            <a class="nav-link" href="">
                                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                                <span class="menu-title">Charts</span>
+                                <span class="menu-title">Upcoming Events</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/tables/basic-table.html">
-                                <i class="menu-icon typcn typcn-bell"></i>
-                                <span class="menu-title">Tables</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/icons/font-awesome.html">
-                                <i class="menu-icon typcn typcn-user-outline"></i>
-                                <span class="menu-title">Icons</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                                <i class="menu-icon typcn typcn-document-add"></i>
-                                <span class="menu-title">User Pages</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="auth">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -176,7 +106,7 @@
                         <div class="row page-title-header">
                             <div class="col-12">
                                 <div class="page-header">
-                                    <h4 class="page-title">Marching Band (Type Goes Here)</h4>
+                                    <h4 class="page-title">10/12/19 - 10/13/19</h4>
                                 </div>
                             </div>
 
@@ -189,7 +119,7 @@
                                     <div class="card-body">
                                         <form action="grpPages" method="post">
                                             <input type="hidden" name="grp" value="001">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Performance Group #1">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Event #1">
                                         </form>
                                         
                                         <div class="card-list d-flex flex-column flex-lg-row">
@@ -198,7 +128,7 @@
                                                     <span class="card-li-title">Type:</span> Marching Band
                                                 </li>
                                                 <li>
-                                                    <span class="card-li-title">Size:</span> 123
+                                                    <span class="card-li-title">Location:</span> Omaha Burke Stadium
                                                 </li>
                                             </ul>
                                         </div>
@@ -209,14 +139,14 @@
                                 <div class="card">
                                     <div class="card-body d-flex flex-column">
                                         <div class="wrapper">
-                                            <h4 class="card-title mb-0">Upcoming Events</h4>
+                                            <h4 class="card-title mb-0">Registered Schools</h4>
                                             <div class="card-list d-flex flex-column flex-lg-row">
                                             <ul class="card-ul">
                                                 <li>
-                                                    Event 1
+                                                    School 1
                                                 </li>
                                                 <li>
-                                                    Event 2
+                                                    School 2
                                                 </li>
                                             </ul>
                                             </div>
@@ -232,7 +162,7 @@
                                     <div class="card-body">
                                         <form action="grpPages" method="post">
                                             <input type="hidden" name="grp" value="000">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Event">
                                         </form>
                                         
                                       
