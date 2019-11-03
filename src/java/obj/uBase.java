@@ -13,9 +13,9 @@ import encrypt.ec;
  */
 public class uBase {
 
-    public String uus; //unhashed username
-    public String hus; //hashed username
-    public String hpw; //hashed password
+    private String uus; //unhashed username
+    private String hus; //hashed username
+    private String hpw; //hashed password
 
     public uBase() {
     }

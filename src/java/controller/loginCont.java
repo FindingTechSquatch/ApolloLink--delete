@@ -63,6 +63,14 @@ public class loginCont extends HttpServlet {
             session.setAttribute("er1", lgError1);
             session.setAttribute("er2", lgError1);
             
+            String fn = request.getParameter("fn");
+            String ln = request.getParameter("ln");
+            String ph = request.getParameter("ph");
+            String em = request.getParameter("em");
+            String pw = request.getParameter("pw");
+            String rpw = request.getParameter("rpw");
+            String sl = request.getParameter("sl");
+            
             
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in
