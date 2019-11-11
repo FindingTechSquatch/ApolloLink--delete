@@ -5,7 +5,6 @@
  */
 package controller;
 
-import encrypt.ec;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
@@ -17,8 +16,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import obj.uBase;
-import validation.IVString;
+import obj.*;
+import database.*;
+import encrypt.*;
+import validation.*;
 
 /**
  *
@@ -44,15 +45,21 @@ public class loginCont extends HttpServlet {
         String action = request.getParameter("act");
         if (action == null) {
             action = "n";
+            session.invalidate();
+            session = request.getSession();  
         }
 
         if (action.equalsIgnoreCase("n")) { //brand new, just accessing the site
+            session.invalidate();
+            session = request.getSession();
             session.setAttribute("hd1", "hidden");
             session.setAttribute("hd2", "hidden");
             ArrayList<String> lgError1 = new ArrayList();
             ArrayList<String> lgError2 = new ArrayList();
             session.setAttribute("er1", lgError1);
             session.setAttribute("er2", lgError1);
+            ArrayList<School> schl = dbSignIn.getAllSchools();
+            session.setAttribute("schl", schl);
 
             //needs to load schools
         } else if (action.equalsIgnoreCase("su")) { //sign up
@@ -61,17 +68,171 @@ public class loginCont extends HttpServlet {
             ArrayList<String> lgError1 = new ArrayList();
             ArrayList<String> lgError2 = new ArrayList();
             session.setAttribute("er1", lgError1);
-            session.setAttribute("er2", lgError1);
-            
+            session.setAttribute("er2", lgError2);
+
             String fn = request.getParameter("fn");
             String ln = request.getParameter("ln");
             String ph = request.getParameter("ph");
             String em = request.getParameter("em");
             String pw = request.getParameter("pw");
             String rpw = request.getParameter("rpw");
+
+            ArrayList<School> schl = (ArrayList<School>) session.getAttribute("schl");
             String sl = request.getParameter("sl");
-            
-            
+            School s1 = null;
+
+            String errString = "";
+            //<<<<<<<<<<<<<<<< First Name Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(fn)) {
+                if (!IVString.IsNumeric(fn)) {
+                    if (!IVString.ContainsSpecials(fn)) {
+                        //DO SOMETHING
+                    } else {
+                        errString += "fn";
+                        lgError2.add("First Name contained invalid characters.");
+                    }
+                } else {
+                    errString += "fn";
+                    lgError2.add("First Name contained invalid characters.");
+                }
+            } else {
+                errString += "fn";
+                lgError2.add("A First Name was not entered.");
+            }
+            //<<<<<<<<<<<<<<<< Last Name Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(ln)) {
+                if (!IVString.IsNumeric(fn)) {
+                    if (!IVString.ContainsSpecials(fn)) {
+                        //DO SOMETHING
+                    } else {
+                        errString += "ln";
+                        lgError2.add("Last Name contained invalid characters.");
+                    }
+                } else {
+                    errString += "ln";
+                    lgError2.add("Last Name contained invalid characters.");
+                }
+            } else {
+                errString += "ln";
+                lgError2.add("A Last Name was not entered.");
+            }
+            //<<<<<<<<<<<<<<<< Phone Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(ph)) {
+                if (IVString.IsNumeric(ph)) {
+                    //DO SOMETHING
+                } else {
+                    errString += "ph";
+                    lgError2.add("Phone Number contained invalid characters.");
+                }
+            } else {
+                errString += "ph";
+                lgError2.add("A Phone Number was not entered.");
+            }
+            //<<<<<<<<<<<<<<<< Email Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(em)) {
+                if (IVString.MatchesRegex(em, IVString.regexLib("email"))) {
+                    if (!dbSignIn.chkUserExists(em)) {
+                        //DO SOMETHING
+                    } else {
+                        errString += "em";
+                        lgError2.add("Email already exists in system.");
+                    }
+                } else {
+                    errString += "em";
+                    lgError2.add("An invalid Email Address was entered.");
+                }
+            } else {
+                errString += "em";
+                lgError2.add("An Email Address was not entered.");
+            }
+            //<<<<<<<<<<<<<<<< Password Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(pw) && IVString.ContainsText(rpw)) {
+                if (pw.equals(rpw)) {
+                    //DO SOMETHING
+                } else {
+                    errString += "pw";
+                    lgError2.add("Passwords did not match.");
+                }
+            } else {
+                errString += "ln";
+                lgError2.add("A Password was not entered.");
+            }
+            //<<<<<<<<<<<<<<<< School Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(sl)) {
+                if (IVString.IsNumeric(sl)) {
+                    int s2 = Integer.parseInt(sl);
+                    for (int i = 0; i < schl.size(); i++) {
+                        if (schl.get(i).getSID() == s2) {
+                            s1 = schl.get(i);
+                        }
+                    }
+                    if (s1 != null) {
+                        //DO SOMETHING
+                    } else {
+                        errString += "sl";
+                        lgError2.add("School was not found.");
+                    }
+                } else if (sl.equalsIgnoreCase("ZZZ")) {
+                    errString += "zz";
+                } else {
+                    errString += "sl";
+                    lgError2.add("School was not found.");
+                }
+            } else {
+                errString += "sl";
+                lgError2.add("A School was not entered.");
+            }
+
+            //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
+            //<<<<<<<<<<<<<<<< Final Validation >>>>>>>>>>>>>>>>
+            //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
+            if (errString == null || errString.equals("")) {
+                session.setAttribute("hd2", "hidden");
+                url = "/grpNfo.jsp";
+                //<<<<<<<<<<<<<<<< Object Creation >>>>>>>>>>>>>>>>
+                uDir newDir = new uDir();
+                newDir.setfName(fn);
+                newDir.setlName(ln);
+                newDir.setPhone(ph);
+                newDir.setUus(em);
+                newDir.setHus(ec.EC_dus(em));
+                newDir.setHpw(ec.EC_dpw(pw));
+                ArrayList<School> insertSchool = new ArrayList<School>();
+                insertSchool.add(s1);
+                newDir.setSchls(insertSchool);
+                newDir = dbSignIn.newUser(newDir);
+                if(newDir == null) {
+                    url = "err500.jsp";
+                }
+            } else if (errString.equalsIgnoreCase("zz")) {
+                url = "/addSchl.jsp";
+            } else {
+                session.setAttribute("hd2", "");
+                url = "/index.jsp";
+                if (!errString.contains("fn")) {
+                    session.setAttribute("fn", fn);
+                    session.setAttribute("fnact", "active");
+                }
+                if (!errString.contains("ln")) {
+                    session.setAttribute("ln", ln);
+                    session.setAttribute("lnact", "active");
+                }
+                if (!errString.contains("ph")) {
+                    session.setAttribute("ph", ph);
+                    session.setAttribute("phact", "active");
+                }
+                if (!errString.contains("em")) {
+                    session.setAttribute("em", em);
+                    session.setAttribute("emact", "active");
+                }
+                if (!errString.contains("sl")) {
+                    session.setAttribute("sl", sl);
+                    session.setAttribute("slact", "active");
+                }
+            }
+
+            session.setAttribute("er1", lgError1);
+            session.setAttribute("er2", lgError2);
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in
             uBase cus = new uBase();
