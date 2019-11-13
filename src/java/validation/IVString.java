@@ -5,6 +5,8 @@
  */
 package validation;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -43,6 +45,7 @@ public class IVString {
 
         try {
             Double.parseDouble(s);
+            b = true;
         } catch (NumberFormatException nex) {
             b = false;
         } catch (Exception ex) {
@@ -50,6 +53,21 @@ public class IVString {
         }
 
         return b;
+    }
+    
+    public static boolean ContainsSpecials(String s) {
+        int errCount = 0;
+        
+        ArrayList<String> specialArray = new ArrayList<String>(Arrays.asList("~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")",
+            "+", "=", "{", "}", "[", "]", ":", ";", "'", "<", ">", ",", ".", "?", "/", "\\", "|"));
+           for(int i = 0; i < specialArray.size(); i++) {
+               if(s.contains(specialArray.get(i))){
+                   errCount++;
+               }
+           }
+    
+        
+        return (errCount>0);
     }
 
     public static boolean MatchesRegex(String s, String r) {

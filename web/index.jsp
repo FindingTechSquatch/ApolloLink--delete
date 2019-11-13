@@ -5,12 +5,15 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.ArrayList, obj.School"%>
 <%
     ArrayList<String> er1 = (ArrayList) session.getAttribute("er1");
 %>
 <%
     ArrayList<String> er2 = (ArrayList) session.getAttribute("er2");
+%>
+<%
+    ArrayList<School> schl = (ArrayList) session.getAttribute("schl");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -102,34 +105,34 @@
                                             </ul>
                                         </div>
                                         <form action="loginCont" method="post">
-                                            <input type="hidden" name="action" value="n">
+                                            <input type="hidden" name="act" value="su">
                                             <div class="two-row">
                                                 <div class="field-wrap">
-                                                    <label>
+                                                    <label class="${fnact}">
                                                         First Name<span class="req">*</span>
                                                     </label>
-                                                    <input class="loginInput" type="text"  name="fn" autocomplete="on" />
+                                                    <input class="loginInput" type="text"  name="fn" autocomplete="on" value="${fn}"/>
                                                 </div>
 
                                                 <div class="field-wrap">
-                                                    <label>
+                                                    <label class="${lnact}">
                                                         Last Name<span class="req">*</span>
                                                     </label>
-                                                    <input class="loginInput" type="text" name="ln" autocomplete="off"/>
+                                                    <input class="loginInput" type="text" name="ln" autocomplete="off" value="${ln}"/>
                                                 </div>
 
                                             </div>
                                             <div class="field-wrap">
-                                                <label>
+                                                <label class="${phact}">
                                                     Phone Number<span class="req">*</span>
                                                 </label>
-                                                <input class="loginInput" type="text" name="ph" maxlength=10 autocomplete="off"/>
+                                                <input class="loginInput" type="text" name="ph" maxlength=10 autocomplete="off" value="${ph}"/>
                                             </div>
                                             <div class="field-wrap">
-                                                <label>
+                                                <label class="${emact}">
                                                     Email Address<span class="req">*</span>
                                                 </label>
-                                                <input class="loginInput" type="text" name="em" autocomplete="off"/>
+                                                <input class="loginInput" type="text" name="em" autocomplete="off" value="${em}"/>
                                             </div>
 
                                             <div class="field-wrap">
@@ -145,34 +148,17 @@
                                                 <input class="loginInput" type="password" name="rpw" autocomplete="off"/>
                                             </div>
                                             <div class="field-wrap">
-
-                                                <label>
+                                                <label class="active highlight">
                                                     School<span class="req">*</span>
                                                 </label>
-                                                <input class="loginInput" type="text" list="schools" name="sl" autocomplete="on" />
-
-                                                <datalist id="schools">
-                                                    <option value="Alabama"><option value="Alaska"><option value="Arizona">
-                                                    <option value="Arkansas"><option value="California"><option value="Colorado">
-                                                    <option value="Connecticut"><option value="Delaware"><option value="District of Columbia">
-                                                    <option value="Florida"><option value="Georgia"><option value="Hawaii">
-                                                    <option value="Idaho"><option value="Illinois"><option value="Indiana">
-                                                    <option value="Iowa"><option value="Kansas"><option value="Kentucky">
-                                                    <option value="Louisiana"><option value="Maine"><option value="Maryland">
-                                                    <option value="Massachusetts"><option value="Michigan"><option value="Minnesota">
-                                                    <option value="Mississippi"><option value="Missouri"><option value="Montana">
-                                                    <option value="Nebraska"><option value="Nevada"><option value="New Hampshire">
-                                                    <option value="New Jersey"><option value="New Mexico"><option value="New York">
-                                                    <option value="North Carolina"><option value="North Dakota"><option value="Ohio">
-                                                    <option value="Oklahoma"><option value="Oregon"><option value="Pennsylvania">
-                                                    <option value="Rhode Island"><option value="South Carolina"><option value="South Dakota">
-                                                    <option value="Tennessee"><option value="Texas"><option value="Utah">
-                                                    <option value="Vermont"><option value="Virginia"><option value="Washington">
-                                                    <option value="West Virginia"><option value="Wisconsin"><option value="Wyoming">
-                                                    <option value="My School is Not Listed">
-                                                </datalist>
+                                                <select class="loginInput" name="sl" value="${sl}">
+                                                    <% for (School s : schl) {%>
+                                                    <option value="<%=s.getSID()%>"><%= s.getSchlName()%></option>
+                                                <% }%>
+                                                <option value="ZZZ">My School Is Not Listed</option>
+                                                </select>
                                             </div>
-                                            <button type="submit" disabled="true" class="button button-block"/>Get Started</button>
+                                            <button type="submit" class="button button-block"/>Get Started</button>
 
                                         </form>
 
