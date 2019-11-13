@@ -163,37 +163,28 @@
                                                     <tr>
                                                         <th><span class="card-li-title">School Name</span></th>
                                                         <th><input class="input" type="text"  name="schNm"></th>
-                                                        <th><span class="card-li-title">          </span></th>
-                                                        <th><span class="card-li-title">Address 1</span></th>
-                                                        <th><input class="input" type="text"  name="sAdd1"></th>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Phone Number</span></td>
-                                                        <td><input class="input" type="text"  name="sPhNum"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">Address 2</span></td>
-                                                        <td><input class="input" type="text"  name="sAdd2"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Class Size</span></td>
-                                                        <td><input class="input" type="text"  name="clsSz"></td>
-                                                        <td><span class="card-li-title">          </span></td>
                                                         <td><span class="card-li-title">City</span></td>
                                                         <td><input class="input" type="text"  name="city"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="card-li-title">Logo</span></td>
-                                                        <td><input class="input" type="file"  name="sLogo"></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">Phone Number</span></td>
+                                                        <td><input class="input" type="text"  name="sPhNum"></td>
                                                         <td><span class="card-li-title">State</span></td>
                                                         <td><input class="input" type="text"  name="state"></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td><span class="card-li-title">Class Size</span></td>
+                                                        <td><input class="input" type="text"  name="clsSz"></td>
                                                         <td><span class="card-li-title">ZIP Code</span></td>
                                                         <td><input class="input" type="text"  name="zip"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th><span class="card-li-title">Address 1</span></th>
+                                                        <th><input class="input" type="text"  name="sAdd1"></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Address 2</span></td>
+                                                        <td><input class="input" type="text"  name="sAdd2"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Save">

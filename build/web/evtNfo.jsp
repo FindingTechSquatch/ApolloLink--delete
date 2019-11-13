@@ -251,14 +251,26 @@
                                         <div class="wrapper">
                                             <h4 class="card-title mb-0">Registered Performances</h4>
                                             <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            Event 1
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Event 2
+                                                        </td>
+                                                    </tr>
+                                                </table>
+<!--                                            <ul class="card-ul">
                                                 <li>
                                                     Event 1
                                                 </li>
                                                 <li>
                                                     Event 2
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                             </div>
                                         </div>
 
@@ -271,14 +283,26 @@
                                         <div class="wrapper">
                                             <h4 class="card-title mb-0">Blocks Available</h4>
                                             <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                                <table>
+                                                    <tr>
+                                                        <td>
+                                                            Block 1
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>
+                                                            Block 2
+                                                        </td>
+                                                    </tr>
+                                                </table>
+<!--                                            <ul class="card-ul">
                                                 <li>
-                                                    Event 1
+                                                    Block 1
                                                 </li>
                                                 <li>
-                                                    Event 2
+                                                    Block 2
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                             </div>
                                         </div>
 

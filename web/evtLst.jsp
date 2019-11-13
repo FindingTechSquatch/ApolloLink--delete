@@ -123,14 +123,24 @@
                                         </form>
                                         
                                         <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                            <table>
+                                                <tr>
+                                                    <td><span class="card-li-title">Type:</span></td>
+                                                    <td style="padding-right: 4em"><span>Marching Band</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="card-li-title">Location:</span></td>
+                                                    <td style="padding-right: 4em"><span>Omaha Burke Stadium</span></td>
+                                                </tr>
+                                            </table>
+                       <!--                 <ul class="card-ul">
                                                 <li>
                                                     <span class="card-li-title">Type:</span> Marching Band
                                                 </li>
                                                 <li>
                                                     <span class="card-li-title">Location:</span> Omaha Burke Stadium
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                         </div>
                                     </div>
                                 </div>
@@ -141,14 +151,25 @@
                                         <div class="wrapper">
                                             <h4 class="card-title mb-0">Registered Schools</h4>
                                             <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                                <table>
+                                                    <tr>
+                                                        <td>School 1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>School 2</td>
+                                                    </tr>
+                                                    
+                                                </table>
+                                                
+                                                
+<!--                                            <ul class="card-ul">
                                                 <li>
                                                     School 1
                                                 </li>
                                                 <li>
                                                     School 2
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                             </div>
                                         </div>
 

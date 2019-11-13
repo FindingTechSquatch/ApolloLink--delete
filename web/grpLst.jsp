@@ -131,14 +131,24 @@
                                         </form>
                                         
                                         <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                            <table>
+                                                <tr>
+                                                    <td><span class="card-li-title">Type:</span></td>
+                                                    <td style="padding-right: 4em"><span>Marching Band</span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="card-li-title">Size:</span></td>
+                                                    <td style="padding-right: 4em"><span>123</span></td>
+                                                </tr>
+                                            </table>
+<!--                                            <ul class="card-ul">
                                                 <li>
                                                     <span class="card-li-title">Type:</span> Marching Band
                                                 </li>
                                                 <li>
-                                                    <span class="card-li-title">Size:</span> 123
+                                                    <span class="card-li-title">Size:</span> AA
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                         </div>
                                     </div>
                                 </div>
@@ -149,14 +159,22 @@
                                         <div class="wrapper">
                                             <h4 class="card-title mb-0">Upcoming Events</h4>
                                             <div class="card-list d-flex flex-column flex-lg-row">
-                                            <ul class="card-ul">
+                                                <table>
+                                                    <tr>
+                                                        <td>Event 1</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Event 2</td>
+                                                    </tr>
+                                                </table>
+<!--                                            <ul class="card-ul">
                                                 <li>
                                                     Event 1
                                                 </li>
                                                 <li>
                                                     Event 2
                                                 </li>
-                                            </ul>
+                                            </ul>-->
                                             </div>
                                         </div>
 
@@ -168,6 +186,7 @@
                             <div class="col-md-12 grid-margin">
                                 <div class="card card-clickable">
                                     <div class="card-body">
+                                        
                                         <form action="grpPages" method="post">
                                             <input type="hidden" name="grp" value="000">
                                             <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Group">

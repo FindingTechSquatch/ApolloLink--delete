@@ -286,21 +286,21 @@
                                                 <table>
                                                     <tr>
                                                         <td>
-                                                            Block 1
+                                                            Event 1
                                                         </td>
                                                     </tr>
                                                     <tr>
                                                         <td>
-                                                            Block 2
+                                                            Event 2
                                                         </td>
                                                     </tr>
                                                 </table>
 <!--                                            <ul class="card-ul">
                                                 <li>
-                                                    Block 1
+                                                    Event 1
                                                 </li>
                                                 <li>
-                                                    Block 2
+                                                    Event 2
                                                 </li>
                                             </ul>-->
                                             </div>

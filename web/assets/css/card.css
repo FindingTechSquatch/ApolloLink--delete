@@ -45,6 +45,7 @@ and open the template in the editor.
 th, td 
 {
     padding: .5em;
+    padding-right: 2em;
 }
 
 .input 

@@ -17,6 +17,9 @@
         <link rel="stylesheet" href="assets/iconfonts/ionicons/css/ionicons.css">
         <link rel="stylesheet" href="assets/iconfonts/typicons/src/font/typicons.css">
         <link rel="stylesheet" href="assets/iconfonts/flag-icon-css/css/flag-icon.min.css">
+        <link rel="stylesheet" href="assets/css/start.css">
+        <link rel="stylesheet" href="assets/css/card.css">
+        <link rel="stylesheet" href="assets/css/buttons.css">
         <!-- endinject -->
         <!-- plugin css for this page -->
         <!-- End plugin css for this page -->
@@ -56,7 +59,8 @@
                                     <p class="font-weight-light text-muted mb-0">allenmoreno@gmail.com</p>
                                 </div>
                                 <a class="dropdown-item">User Settings<i class="dropdown-item-icon ti-dashboard"></i></a>
-                                <a class="dropdown-item"><i class="dropdown-item-icon ti-comment-alt"></i></a>
+                                <a class="dropdown-item">School Settings<i class="dropdown-item-icon ti-comment-alt"></i></a>
+                                <a class="dropdown-item">Contact Us<i class="dropdown-item-icon ti-comment-alt"></i></a>
                                 <a class="dropdown-item">Sign Out<i class="dropdown-item-icon ti-location-arrow"></i></a>
                                 <!--TODO
                                 <a class="dropdown-item">My Profile <span class="badge badge-pill badge-danger">1</span><i class="dropdown-item-icon ti-dashboard"></i></a>
@@ -77,94 +81,30 @@
                 <!-- partial:partials/_sidebar.html -->
                 <nav class="sidebar sidebar-offcanvas" id="sidebar">
                     <ul class="nav">
-                        <li class="nav-item nav-profile">
-                            <a href="#" class="nav-link">
-                                <div class="profile-image">
-                                    <img class="img-xs rounded-circle" src="assets/images/faces/face8.jpg" alt="profile image">
-                                    <div class="dot-indicator bg-success"></div>
-                                </div>
-                                <div class="text-wrapper">
-                                    <p class="profile-name">Allen Moreno</p>
-                                    <p class="designation">Premium user</p>
-                                </div>
-                            </a>
-                        </li>
                         <li class="nav-item nav-category">Main Menu</li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="grpLst.jsp">
                                 <i class="menu-icon typcn typcn-document-text"></i>
-                                <span class="menu-title">Dashboard</span>
+                                <span class="menu-title">My Groups</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#ui-basic" aria-expanded="false" aria-controls="ui-basic">
-                                <i class="menu-icon typcn typcn-coffee"></i>
-                                <span class="menu-title">Basic UI Elements</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="ui-basic">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/buttons.html">Buttons</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/ui-features/typography.html">Typography</a>
-                                    </li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/forms/basic_elements.html">
+                            <a class="nav-link" href="grpAdd.jsp">
                                 <i class="menu-icon typcn typcn-shopping-bag"></i>
-                                <span class="menu-title">Form elements</span>
+                                <span class="menu-title">Add Group</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/charts/chartjs.html">
+                            <a class="nav-link" href="">
                                 <i class="menu-icon typcn typcn-th-large-outline"></i>
-                                <span class="menu-title">Charts</span>
+                                <span class="menu-title">Upcoming Events</span>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="pages/tables/basic-table.html">
+                            <a class="nav-link" href="">
                                 <i class="menu-icon typcn typcn-bell"></i>
-                                <span class="menu-title">Tables</span>
+                                <span class="menu-title">Event Results</span>
                             </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="pages/icons/font-awesome.html">
-                                <i class="menu-icon typcn typcn-user-outline"></i>
-                                <span class="menu-title">Icons</span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" data-toggle="collapse" href="#auth" aria-expanded="false" aria-controls="auth">
-                                <i class="menu-icon typcn typcn-document-add"></i>
-                                <span class="menu-title">User Pages</span>
-                                <i class="menu-arrow"></i>
-                            </a>
-                            <div class="collapse" id="auth">
-                                <ul class="nav flex-column sub-menu">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/blank-page.html"> Blank Page </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/login.html"> Login </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/register.html"> Register </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/error-404.html"> 404 </a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="pages/samples/error-500.html"> 500 </a>
-                                    </li>
-                                </ul>
-                            </div>
                         </li>
                     </ul>
                 </nav>
@@ -172,126 +112,145 @@
                 <div class="main-panel">
                     <div class="content-wrapper">
                         <!-- Page Title Header Starts-->
-                        <div class="row page-title-header">
-                            <div class="col-12">
-                                <div class="page-header">
-                                    <h4 class="page-title">Dashboard</h4>
-                                    <div class="quick-link-wrapper w-100 d-md-flex flex-md-wrap">
-                                        <ul class="quick-links">
-                                            <li><a href="#">ICE Market data</a></li>
-                                            <li><a href="#">Own analysis</a></li>
-                                            <li><a href="#">Historic market data</a></li>
-                                        </ul>
-                                        <ul class="quick-links ml-auto">
-                                            <li><a href="#">Settings</a></li>
-                                            <li><a href="#">Analytics</a></li>
-                                            <li><a href="#">Watchlist</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-
-                        </div>
+                        
                         <!-- Page Title Header Ends-->
 
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
+                            <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #1</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body d-flex flex-column">
-                                        <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 1, school 2, etc</p>
-                                        </div>
+                                        <h4 class="card-title mb-0"> Performance Times </h4>
 
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <form action="updNfoPages" method="post">
+                                                <table padding="15">
+                                                    <tr>
+                                                        <th padding-right="50"><span class="card-li-title">Event</span></th>
+                                                        <th padding="15"><span class="card-li-title">Date</span></th>
+                                                        <th padding="15"><span class="card-li-title">Time Block</span></th>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>Event 1</span></td>
+                                                        <td><span>October 12, 2019</span></td>
+                                                        <td><select name="tmeBlk">
+                                                                <option value="tme1">10:00 am - 10:15 am</option>
+                                                                <option value="tme2">10:15 am - 10:30 am</option>
+                                                                <option value="tme3">10:45 am - 11:00 am</option>
+                                                                <option value="tme4">11:00 am - 1:15 am</option>
+                                                                <option value="tme5">11:15 am - 11:30 am</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>Event 2</span></td>
+                                                        <td><span>October 24, 2019</span></td>
+                                                        <td><select name="tmeBlk">
+                                                                <option value="tme1">10:00 am - 10:15 am</option>
+                                                                <option value="tme2">10:15 am - 10:30 am</option>
+                                                                <option value="tme3">10:45 am - 11:00 am</option>
+                                                                <option value="tme4">11:00 am - 1:15 am</option>
+                                                                <option value="tme5">11:15 am - 11:30 am</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span>Event 3</span></td>
+                                                        <td><span>November 8, 2019</span></td>
+                                                        <td><select name="tmeBlk">
+                                                                <option value="tme1">10:00 am - 10:15 am</option>
+                                                                <option value="tme2">10:15 am - 10:30 am</option>
+                                                                <option value="tme3">10:45 am - 11:00 am</option>
+                                                                <option value="tme4">11:00 am - 1:15 am</option>
+                                                                <option value="tme5">11:15 am - 11:30 am</option>
+                                                            </select>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
+                                             
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
+                            <div class="col-md-12 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="card-title mb-0">One of the Events I Manage #2</h4>
-                                        <div class="d-flex flex-column flex-lg-row">
-                                            <p>Data regarding that event</p>
-                                            <br>
-                                            <p>a;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdl
-                                                fkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;f
-                                                lkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkj
-                                                as;dflkjas;dlfkjasd;lfkja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lf
-                                                kja;slfkdlfkjasd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkja;slfkdlfkja
-                                                sd;flkjas;dlfkjas;dflkjas;dlfkjasd;lfkj</p>
+                                        <h4 class="card-title mb-0"> Performance Information </h4>
+                                        <div class="card-list d-flex flex-column flex-lg-row">
+                                            <form action="updNfoPages" method="post">
+                                                <table>
+                                                    <tr>
+                                                        <td><span class="card-li-title">Performance Title: </span></td>
+                                                        <td><input class="input" type="text" name="prfTtl"></td>
+                                                        <td><span class="card-li-title">Pre-Performance Announcement:</span></td>
+                                                        <td><input class="input" type="text" name="preAnn"></td>
+                                                        
+                                                        
+                                                    </tr>
+                                                    <tr>
+                                                        
+                                                        <td  valign="top"><span class="card-li-title">Song Titles:</span></td>
+                                                        <td></td>
+                                                        <!--<td style="padding-right: 4em">
+                                                            <span>
+                                                                <ul class="card-ul">
+                                                                    <li>
+                                                                        <span class="card-li-title">Song 1</span><input class="input" type="text" name="sng1">
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="card-li-title">Song 2</span><input class="input" type="text" name="sng1">
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="card-li-title">Song 3</span><input class="input" type="text" name="sng1">
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="card-li-title">Song 4</span><input class="input" type="text" name="sng1">
+                                                                    </li>
+                                                                    <li>
+                                                                        <span class="card-li-title">Song 5</span><input class="input" type="text" name="sng1">
+                                                                    </li>
+                                                                </ul>
+                                                                    
+                                                            </span>
+                                                        </td>-->
+                                                        <td valign="top"><span class="card-li-title">Post-Performance Announcement:</span></td>
+                                                        <td valign="top"><input class="input" type="text" name="posAnn"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><span class="card-li-title">Song 1</span></td>
+                                                        <td><input class="input" type="text" name="sng1"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><span class="card-li-title">Song 2</span></td>
+                                                        <td><input class="input" type="text" name="sng2"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><span class="card-li-title">Song 3</span></td>
+                                                        <td><input class="input" type="text" name="sng3"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><span class="card-li-title">Song 4</span></td>
+                                                        <td><input class="input" type="text" name="sng4"></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td align="right"><span class="card-li-title">Song 5</span></td>
+                                                        <td><input class="input" type="text" name="sng5"></td>
+                                                    </tr>
+                                                </table>
+                                                <input type="submit" class="btn btn-dark btn-fw" value="Save">
+                                            </form>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 grid-margin stretch-card">
-                                <div class="card">
-                                    <div class="card-body d-flex flex-column">
-                                        <div class="wrapper">
-                                            <h4 class="card-title mb-0">List of Performance Groups/Schools Attending</h4>
-                                            <p>School 3, school 4, etc</p>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                        </div>  
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->
                     <footer class="footer">
                         <div class="container-fluid clearfix">
-                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright © 2019 <a href="http://www.bootstrapdash.com/" target="_blank">Bootstrapdash</a>. All rights reserved.</span>
-                            <span class="float-none float-sm-right d-block mt-1 mt-sm-0 text-center">Hand-crafted & made with <i class="mdi mdi-heart text-danger"></i>
+                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright &#169; 2019 FindingTechSquatch. A division of the TRYHard Lab. All rights reserved.</span>
                             </span>
                         </div>
                     </footer>

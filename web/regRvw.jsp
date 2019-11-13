@@ -129,7 +129,7 @@
                                             <form action="updNfoPages" method="post">
                                                 <table padding="15">
                                                     <tr>
-                                                        <th padding="50"><span class="card-li-title">Event</span></th>
+                                                        <th padding-right="50"><span class="card-li-title">Event</span></th>
                                                         <th padding="15"><span class="card-li-title">Date</span></th>
                                                         <th padding="15"><span class="card-li-title">Time Block</span></th>
                                                     </tr>
@@ -139,14 +139,14 @@
                                                         <td><span>10:00 am - 10:15 am</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span>Event 1</span></td>
-                                                        <td><span>October 12, 2019</span></td>
-                                                        <td><span>10:00 am - 10:15 am</span></td>
+                                                        <td><span>Event 2</span></td>
+                                                        <td><span>October 24, 2019</span></td>
+                                                        <td><span>9:00 am - 9:15 am</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span>Event 1</span></td>
-                                                        <td><span>October 12, 2019</span></td>
-                                                        <td><span>10:00 am - 10:15 am</span></td>
+                                                        <td><span>Event 3</span></td>
+                                                        <td><span>November 8, 2019</span></td>
+                                                        <td><span>12:00 pm - 12:15 pm</span></td>
                                                     </tr>
                                                 </table>
                                             </form>
@@ -166,39 +166,34 @@
                                             <form action="updNfoPages" method="post">
                                                 <table>
                                                     <tr>
-                                                        <th><span class="card-li-title">School Name</span></th>
-                                                        <th><input class="input" type="text"  name="schNm"></th>
-                                                        <th><span class="card-li-title">          </span></th>
-                                                        <th><span class="card-li-title">Address 1</span></th>
-                                                        <th><input class="input" type="text"  name="sAdd1"></th>
+                                                        <td  valign="top"><span class="card-li-title">Performance Title: </span></td>
+                                                        <td style="padding-right: 4em" valign="top"><span>Persephone</span></td>
+                                                        <td  valign="top"><span class="card-li-title">Pre-Performance Announcement:</span></td>
+                                                        <td  style="padding-right: 4em" valign="top"><span>Welcome the Waverly Vikes!</span></td>
+                                                        
+                                                        
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="card-li-title">Phone Number</span></td>
-                                                        <td><input class="input" type="text"  name="sPhNum"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">Address 2</span></td>
-                                                        <td><input class="input" type="text"  name="sAdd2"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Class Size</span></td>
-                                                        <td><input class="input" type="text"  name="clsSz"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">City</span></td>
-                                                        <td><input class="input" type="text"  name="city"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Logo</span></td>
-                                                        <td><input class="input" type="file"  name="sLogo"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">State</span></td>
-                                                        <td><input class="input" type="text"  name="state"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">ZIP Code</span></td>
-                                                        <td><input class="input" type="text"  name="zip"></td>
+                                                        
+                                                        <td  valign="top"><span class="card-li-title">Song Titles:</span></td>
+                                                        <td style="padding-right: 4em">
+                                                            <span>
+                                                                <ul class="card-ul">
+                                                                    <li>
+                                                                        Song 1
+                                                                    </li>
+                                                                    <li>
+                                                                        Song 2
+                                                                    </li>
+                                                                    <li>
+                                                                        Song 3
+                                                                    </li>
+                                                                </ul>
+                                                                    
+                                                            </span>
+                                                        </td>
+                                                        <td  valign="top"><span class="card-li-title">Post-Performance Announcement:</span></td>
+                                                        <td  valign="top"><span>And that was the Waverly Vikes!</span></td>
                                                     </tr>
                                                 </table>
                                             </form>
@@ -216,40 +211,14 @@
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <form action="updNfoPages" method="post">
                                                 <table>
-                                                    <tr>
-                                                        <th><span class="card-li-title">School Name</span></th>
-                                                        <th><input class="input" type="text"  name="schNm"></th>
-                                                        <th><span class="card-li-title">          </span></th>
-                                                        <th><span class="card-li-title">Address 1</span></th>
-                                                        <th><input class="input" type="text"  name="sAdd1"></th>
+                                                    <td><span class="card-li-title">Group Name: </span></td>
+                                                        <td style="padding-right: 4em"><span>Waverly Vikings</span></td>
+                                                        <td><span class="card-li-title">Group Type:</span></td>
+                                                        <td><span>Marching Band</span></td>
                                                     </tr>
                                                     <tr>
-                                                        <td><span class="card-li-title">Phone Number</span></td>
-                                                        <td><input class="input" type="text"  name="sPhNum"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">Address 2</span></td>
-                                                        <td><input class="input" type="text"  name="sAdd2"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Class Size</span></td>
-                                                        <td><input class="input" type="text"  name="clsSz"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">City</span></td>
-                                                        <td><input class="input" type="text"  name="city"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">Logo</span></td>
-                                                        <td><input class="input" type="file"  name="sLogo"></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">State</span></td>
-                                                        <td><input class="input" type="text"  name="state"></td>
-                                                    </tr>
-                                                    <tr>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">          </span></td>
-                                                        <td><span class="card-li-title">ZIP Code</span></td>
-                                                        <td><input class="input" type="text"  name="zip"></td>
+                                                        <td><span class="card-li-title">Class Size:</span></td>
+                                                        <td style="padding-right: 4em"><span>123</span></td>
                                                     </tr>
                                                 </table>
                                             </form>
@@ -267,31 +236,26 @@
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <form action="updNfoPages" method="post">
                                                 <table>
-                                                    <tr>
-                                                        <td><span class="card-li-title">School Name: </span></td>
-                                                        <td><span>Waverly High School</span></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                    <td><span class="card-li-title">School Name: </span></td>
+                                                        <td style="padding-right: 4em"><span>Waverly High School</span></td>
                                                         <td><span class="card-li-title">Address 1:</span></td>
                                                         <td><span>1234 Amberly Rd</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Phone Number:</span></td>
-                                                        <td><span>402-589-9632</span></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td style="padding-right: 4em"><span>402-589-9632</span></td>
                                                         <td><span class="card-li-title">Address 2:</span></td>
                                                         <td><span>3252 rtgbn</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Class Size:</span></td>
-                                                        <td><span>123</span></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td style="padding-right: 4em"><span>AA</span></td>
                                                         <td><span class="card-li-title">City:</span></td>
                                                         <td><span>Waverly</span></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">State:</span></td>
-                                                        <td><span>NE</span></td>
-                                                        <td><span class="card-li-title">          </span></td>
+                                                        <td style="padding-right: 4em"><span>NE</span></td>
                                                         <td><span class="card-li-title">ZIP Code:</span></td>
                                                         <td><span>68462</span></td>
                                                     </tr>
