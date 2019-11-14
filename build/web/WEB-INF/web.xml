@@ -16,6 +16,40 @@
             30
         </session-timeout>
     </session-config>
+    
+    <!-- JDBC Realm -->
+    <security-role>
+        <description>Director</description>
+        <role-name>D</role-name>
+    </security-role>
+    <security-role>
+        <description>Administrator</description>
+        <role-name>A</role-name>
+    </security-role>
+    
+    <security-constraint>
+        <web-resource-collection>
+            <web-resource-name>Protected Area</web-resource-name>
+            <url-pattern>/director/*</url-pattern>
+        </web-resource-collection>
+        <auth-constraint>
+            <role-name>D</role-name>
+            <role-name>A</role-name>
+        </auth-constraint>
+        <user-data-constraint>
+            <transport-guarantee>CONFIDENTIAL</transport-guarantee>
+        </user-data-constraint>
+    </security-constraint>
+    
+    <login-config>
+        <auth-method>FORM</auth-method>
+        <form-login-config>
+            <form-login-page>/index.jsp</form-login-page>
+            <form-error-page>/err500.jsp</form-error-page>
+        </form-login-config>
+    </login-config>
+    
+    <!-- Error Pages -->
     <error-page>
         <error-code>400</error-code>
         <location>/err400.jsp</location>

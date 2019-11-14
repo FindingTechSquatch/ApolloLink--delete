@@ -196,4 +196,60 @@ public class dbSignIn {
 
         return u;
     }
+    public static int loginUser(uBase u) {
+        int success = 0;
+        
+        Connection db2 = getConnection();
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            db2.setAutoCommit(false);
+
+            //<<<<<<<<<<<<<<<< INSERT INTO U_CRED >>>>>>>>>>>>>>>>
+            String sql = "SELECT COUNT(*) FROM SCM.U_CRED WHERE USR_H = ? AND PSWD_H = ?";
+            ps = db2.prepareStatement(sql);
+            ps.setString(1, u.getHus());
+            ps.setString(2, u.getHpw());
+            rs = ps.executeQuery();
+            while(rs.next()){
+                success += rs.getInt(1);
+            }
+
+            //<<<<<<<<<<<<<<<< Final Commit for New User >>>>>>>>>>>>>>>>
+            db2.commit();
+            rs.close();
+            ps.close();
+            db2.close();
+        } catch (SQLException e) {
+            System.out.println("Database currently unavailable." + e);
+            
+            try {
+                if (db2 != null) {
+                    db2.rollback();
+                }
+                u = null;
+            } catch (SQLException se) {
+                System.out.println("Database is currently unavailable " + se);
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (db2 != null) {
+                    db2.close();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database currently unavailable." + se);
+            }
+        }
+        
+        
+        return success;
+    }
 }

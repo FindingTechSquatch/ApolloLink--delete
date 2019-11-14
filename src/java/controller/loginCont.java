@@ -154,7 +154,7 @@ public class loginCont extends HttpServlet {
                     lgError2.add("Passwords did not match.");
                 }
             } else {
-                errString += "ln";
+                errString += "pw";
                 lgError2.add("A Password was not entered.");
             }
             //<<<<<<<<<<<<<<<< School Validation >>>>>>>>>>>>>>>>
@@ -188,7 +188,7 @@ public class loginCont extends HttpServlet {
             //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
             if (errString == null || errString.equals("")) {
                 session.setAttribute("hd2", "hidden");
-                url = "/grpNfo.jsp";
+                url = "/formCont";
                 //<<<<<<<<<<<<<<<< Object Creation >>>>>>>>>>>>>>>>
                 uDir newDir = new uDir();
                 newDir.setfName(fn);
@@ -235,45 +235,64 @@ public class loginCont extends HttpServlet {
             session.setAttribute("er2", lgError2);
 
         } else if (action.equalsIgnoreCase("lg")) { //regular log in
-            uBase cus = new uBase();
             session.setAttribute("hd1", "hidden");
             session.setAttribute("hd2", "hidden");
             ArrayList<String> lgError1 = new ArrayList();
             ArrayList<String> lgError2 = new ArrayList();
             session.setAttribute("er1", lgError1);
             session.setAttribute("er2", lgError1);
-
             String us = request.getParameter("us");
             String pw = request.getParameter("pw");
-            boolean lg1, lg2, lg3 = false;
-            lg1 = IVString.ContainsText(us);
-            lg2 = IVString.MatchesRegex(us, IVString.regexLib("email"));
-            lg3 = IVString.ContainsText(pw);
-
-            if (lg1 && lg2 && lg3) {
-                url = "/grpLst.jsp";
-
-                cus.setUus(us);
-                cus.setHus(ec.EC_dus(us));
-                cus.setHpw(ec.EC_dpw(us));
-                session.setAttribute("us", cus.getUus());
-                session.setAttribute("pw", cus.getHpw());
+            
+            String errString = "";
+            //<<<<<<<<<<<<<<<< Username Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(us)) {
+                if (IVString.MatchesRegex(us, IVString.regexLib("email"))) {
+                    //do something
+                } else {
+                    errString += "us";
+                    lgError1.add("An invalid Email Address was entered.");
+                }
             } else {
-                url = "/index.jsp";
-                if (!lg1 || !lg2) {
-                    session.setAttribute("hd1", "");
-                    if (!lg1) {
-                        lgError1.add("An email was not entered.");
-                    } else if (!lg2) {
-                        lgError1.add("An invalid email was entered.");
-                    }
-                }
-                if (!lg3) {
-                    lgError1.add("A password was not entered.");
-                }
-                session.setAttribute("er1", lgError1);
-
+                errString += "us";
+                lgError1.add("An Email Address was not entered.");
             }
+            //<<<<<<<<<<<<<<<< Password Validation >>>>>>>>>>>>>>>>
+            if (IVString.ContainsText(pw)) {
+                //Do Something
+            } else {
+                errString += "pw";
+                lgError1.add("A Password was not entered.");
+            }
+
+            
+            //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
+            //<<<<<<<<<<<<<<<< Final Validation >>>>>>>>>>>>>>>>
+            //<<<<<<<<<<<<<<<<>>>>>>>>>>>>>>>>
+            if (errString == null || errString.equals("")) {
+                session.setAttribute("hd1", "hidden");
+                url = "/formCont";
+                //<<<<<<<<<<<<<<<< Object Creation >>>>>>>>>>>>>>>>
+                uBase frstUsr = new uBase();
+                frstUsr.setUus(us);
+                frstUsr.setHus(ec.EC_dus(us));
+                frstUsr.setHpw(ec.EC_dpw(pw));
+               
+                if(dbSignIn.loginUser(frstUsr) == 1) {
+                    //get user values
+                    
+                } else {
+                    url = "/index.jsp";
+                    session.setAttribute("hd1", "");
+                    lgError1.add("Username/Password was incorrect.");
+                }
+            } else {
+                session.setAttribute("hd1", "");
+                url = "/index.jsp";
+            }
+
+            session.setAttribute("er1", lgError1);
+            session.setAttribute("er2", lgError2);
 
         } else if (action.equalsIgnoreCase("ev")) { //clicks event manager button
             url = "/evtlgn.jsp";

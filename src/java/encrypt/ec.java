@@ -23,7 +23,8 @@ public class ec {
             ch.setSaltLength(16);
             ch.setIterations(4096);
 
-            String h = ch.mutate(ec+"YvqlQH7CwKgbK4VbsaK2atDvXZ6L");
+            //String h = ch.mutate(ec+"YvqlQH7CwKgbK4VbsaK2atDvXZ6L");
+            String h = ch.mutate(ec);
 
             return h;
         } catch (NoSuchAlgorithmException ex) {
@@ -35,6 +36,29 @@ public class ec {
             return null;
         }
     }
+    public static String EC_dpw_match(String ec, String db) {
+        try {
+            SecretKeyCredentialHandler ch = new SecretKeyCredentialHandler();
+            ch.setAlgorithm("PBKDF2WithHmacSHA256");
+            ch.setKeyLength(256);
+            ch.setSaltLength(16);
+            ch.setIterations(4096);
+
+            //String h = ch.mutate(ec+"YvqlQH7CwKgbK4VbsaK2atDvXZ6L");
+            String h = ch.mutate(ec);
+
+            return h;
+        } catch (NoSuchAlgorithmException ex) {
+            Logger.getLogger(ec.class.getName()).log(Level.SEVERE, null, ex);
+            //DO SOMETHING HERE
+            return null;
+        } catch (Exception ex) {
+            //DO SOMETHING HERE
+            return null;
+        }
+    }
+    
+    
     public static String EC_dus(String ec) {
         try {
             SecretKeyCredentialHandler ch = new SecretKeyCredentialHandler();
