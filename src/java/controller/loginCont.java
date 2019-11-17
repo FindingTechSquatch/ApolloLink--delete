@@ -38,7 +38,9 @@ public class loginCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/index.jsp";
+        String url = "/formCont";
+        
+        ArrayList<School> test = getObjs.getAllFromUID(1);
 
         HttpSession session = request.getSession();
 
@@ -60,6 +62,7 @@ public class loginCont extends HttpServlet {
             session.setAttribute("er2", lgError1);
             ArrayList<School> schl = dbSignIn.getAllSchools();
             session.setAttribute("schl", schl);
+            session.setAttribute("test", test);
 
             //needs to load schools
         } else if (action.equalsIgnoreCase("su")) { //sign up

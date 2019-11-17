@@ -5,13 +5,14 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tyleryork
  */
-public class Group {
+public class Group implements Serializable{
     
     private int GID;
     private String grpName;

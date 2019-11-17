@@ -32,7 +32,7 @@ You pass this method a String, then call a method from the String class called i
 if nothing is in the field, it will display an error message and return false, if the field is not empty
 it will return a true
 */
-   public static boolean isStringPresent(String stringData, String title)
+   public boolean isStringPresent(String stringData, String title)
    {
    	
 	if(stringData.isEmpty())
@@ -52,7 +52,7 @@ it will return a true
  * If there are characters in the field, it drops to the catch statement, displays an error message,
  * and returns a false.
  */
-    public static boolean isInteger(String intData, String title)
+    public boolean isInteger(String intData, String title)
     {
 	try
 	{
@@ -77,7 +77,7 @@ it will return a true
  * The integer is tested to make sure that it falls with the ranges, if it does, it returns a true, if 
  * it does not, it returns a false.
  */
-    public static boolean isWithinRangeInteger(String intData, int min, int max, String title)
+    public boolean isWithinRangeInteger(String intData, int min, int max, String title)
     {
 	int i = Integer.parseInt(intData);
 	if (i < min | i > max)
@@ -90,7 +90,7 @@ it will return a true
   
    //************************************************** 
 	//method that tests for numeric data for a long integer
-	public static boolean isLong(String longData, String title)
+	public boolean isLong(String longData, String title)
 	{
 		try
 		{
@@ -104,7 +104,7 @@ it will return a true
 		}
 	}
 	//method that tests a range using a long integer
-	public static boolean isWithinRangeLong(String longData, long min, long max, String title)
+	public boolean isWithinRangeLong(String longData, long min, long max, String title)
 	{
 		long i = Long.parseLong(longData);
 		if (i < min | i > max)
@@ -116,7 +116,7 @@ it will return a true
 	}
 	
 //This method is the same as isInteger, but tests a double
-	public static boolean isDouble(String doubleData, String title)
+	public boolean isDouble(String doubleData, String title)
 	{
 		try
 		{
@@ -132,7 +132,7 @@ it will return a true
 	
 //******************************************
 //This method is the same as isWithinRangeInteger, but tests a double
-	public static boolean isWithinRangeDouble(String doubleData, double min, double max, String title)
+	public boolean isWithinRangeDouble(String doubleData, double min, double max, String title)
 	{
 		double d = Double.parseDouble(doubleData);
 		if (d < min | d > max)
@@ -144,7 +144,7 @@ it will return a true
 	}
 //******************************************
 //This method accepts a String argument, then tests it for a valid date
-	public static boolean isDateValid(String date)
+	public boolean isDateValid(String date)
 	{		
 		try
 		{

@@ -5,13 +5,14 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tyleryork
  */
-public class uDir extends uDetail {
+public class uDir extends uDetail implements Serializable{
     
     private ArrayList<School> schls;
 

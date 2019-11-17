@@ -6,12 +6,13 @@
 package obj;
 
 import encrypt.ec;
+import java.io.Serializable;
 
 /**
  *
  * @author tyleryork
  */
-public class uBase {
+public class uBase implements Serializable{
 
     private String uus; //unhashed username
     private String hus; //hashed username

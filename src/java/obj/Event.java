@@ -5,6 +5,7 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.time.*;
 import java.util.ArrayList;
 
@@ -12,7 +13,7 @@ import java.util.ArrayList;
  *
  * @author tyleryork
  */
-public class Event {
+public class Event implements Serializable{
     private int EID;
     private String name;
     private String host;

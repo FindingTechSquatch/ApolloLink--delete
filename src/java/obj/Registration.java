@@ -5,13 +5,14 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.time.*;
 
 /**
  *
  * @author tyleryork
  */
-public class Registration {
+public class Registration implements Serializable{
     private int RID;
     private LocalDateTime regDteTm;
     private String type;

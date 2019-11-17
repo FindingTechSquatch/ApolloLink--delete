@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList, obj.*"%>
+<%
+    Group grpTst = (Group) session.getAttribute("grpTst");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -42,7 +46,7 @@
                         <img src="assets/images/logo/grad/Black_Grad_Logo3_2.png" alt="logo" /> </a>
                 </div>
                 <div class="navbar-menu-wrapper d-flex align-items-center">
-                    <h2> Performance Group #1 </h2>
+                    <h2> <%=grpTst.getGrpName()%> </h2>
                     <!-- TODO
                     <form class="ml-auto search-form d-none d-md-block" action="#">
                         <div class="form-group">
@@ -139,11 +143,11 @@
                                                 <table>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Name</span></td>
-                                                        <td><input class="input" type="text"  name="grpNm"></td>
+                                                        <td><input class="input" type="text"  name="grpNm" value="<%=grpTst.getGrpName()%>"></td>
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Type</span></td>
-                                                        <td><input class="input" type="text" disabled="true" list="grpTypes" name="grpTyp">
+                                                        <td><input class="input" type="text" disabled="true" list="grpTypes" name="grpTyp" value="<%=grpTst.getGrpType()%>">
                                                             <datalist id="grpTypes">
                                                                 <option value="Marching Band">
                                                                 <option value="Choir">
@@ -153,7 +157,7 @@
                                                     </tr>
                                                     <tr>
                                                         <td><span class="card-li-title">Group Size</span></td>
-                                                        <td><input class="input" type="text" disabled="true" name="grpSz"></td>
+                                                        <td><input class="input" type="text" disabled="true" name="grpSz" value="<%=grpTst.getGrpSize()%>"></td>
                                                     </tr>
                                                 </table>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Save">
@@ -180,11 +184,12 @@
                                                         <th class="card-li-title">Title</th>
                                                         <th class="card-li-title">Year</th>
                                                     </tr>
+                                                    <% for (grpLeader l : grpTst.getLdrs()) {%>
                                                     <tr>
-                                                        <td><input class="input" type="text" disabled="true" name="ldrFNAME01"</td>
-                                                        <td><input class="input" type="text" disabled="true" name="ldrLNAME"</td>
-                                                        <td><input class="input" type="text" disabled="true" name="ldrTITLE"</td>
-                                                        <td><input class="input" type="text" disabled="true" list="ldrYears" name="ldrYear">
+                                                        <td><input class="input" type="text" disabled="true" name="ldrFNAME01" value="<%=l.getLdrFName()%>"</td>
+                                                        <td><input class="input" type="text" disabled="true" name="ldrLNAME" value="<%=l.getLdrLName()%>"</td>
+                                                        <td><input class="input" type="text" disabled="true" name="ldrTITLE" value="<%=l.getLdrTitle()%>"</td>
+                                                        <td><input class="input" type="text" disabled="true" list="ldrYears" name="ldrYear" value="<%=l.getLdrSchlYr()%>">
                                                             <datalist id="ldrYears">
                                                                 <option value="Freshman">
                                                                 <option value="Softmore">
@@ -193,6 +198,7 @@
                                                             </datalist>
                                                         </td>
                                                     </tr>
+                                                    <% }%>
                                                 </table>
                                                     <button class="btn btn-dark btn-fw">Add</button>
                                                 <input type="submit" class="btn btn-dark btn-fw" value="Save">

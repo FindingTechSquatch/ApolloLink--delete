@@ -5,11 +5,13 @@
  */
 package obj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tyleryork
  */
-public class grpLeader {
+public class grpLeader implements Serializable{
     
     private int LID;
     private String ldrFName;

@@ -5,13 +5,14 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tyleryork
  */
-public class School {
+public class School implements Serializable{
     
     private int SID;
     private String schlName;

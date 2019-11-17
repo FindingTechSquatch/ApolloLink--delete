@@ -1,9 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Context path="/ApolloLink">
-<Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
+<!--<Realm className="org.apache.catalina.realm.JDBCRealm" debug="99"
     driverName="com.ibm.db2.jcc.DB2Driver"
     connectionURL="jdbc:db2://zos.kctr.marist.edu:5040/DALLASC"
     connectionName="KC02511" connectionPassword="FALL2019"
     userTable="U_CRED" userNameCol="USR_H" userCredCol="PSWD_H"
-    userRoleTable="U_DETAIL" roleNameCol="USR_TYPE" />
+    userRoleTable="U_DETAIL" roleNameCol="USR_TYPE" />-->
+    <Realm className="org.apache.catalina.realm.JDBCRealm" 
+        driverName="com.mysql.jdbc.Driver"
+         connectionName="KC02511" connectionPassword="FALL2019"
+         connectionURL="jdbc:mysql://awszeusdb.tryhardlab.com:3306/APOLLO" 
+         debug="99"  userTable="U_CRED" userNameCol="US" userCredCol="PW"
+    userRoleTable="U_ROLE" roleNameCol="UROLE">
+    <!--CredentialHandler algorithm="PBKDF2WithHmacSHA256" 
+                       className="org.apache.catalina.realm.SecretKeyCredentialHandler" 
+                       iterations="4096" keyLength="256" saltLength="16"/-->
+    </Realm>
+    
 </Context>

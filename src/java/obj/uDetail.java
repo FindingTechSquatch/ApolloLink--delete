@@ -5,11 +5,13 @@
  */
 package obj;
 
+import java.io.Serializable;
+
 /**
  *
  * @author tyleryork
  */
-public class uDetail extends uBase {
+public class uDetail extends uBase implements Serializable {
     
     private int uid;
     private String fName;

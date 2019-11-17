@@ -7,11 +7,14 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import obj.*;
 
 /**
  *
@@ -31,7 +34,14 @@ public class formCont extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String url = "/grpNfo.jsp";
+        HttpSession session = request.getSession();
+        String url = "/director/grpNfo.jsp";
+        
+        ArrayList<School> test = (ArrayList) session.getAttribute("test");
+        
+        Group grpTst = test.get(1).getGrps().get(1);
+        
+        session.setAttribute("grpTst", grpTst);
         
         getServletContext()
                 .getRequestDispatcher(url)

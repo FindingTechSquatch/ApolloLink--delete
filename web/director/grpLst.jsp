@@ -5,6 +5,10 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList, obj.*"%>
+<%
+    ArrayList<School> test = (ArrayList) session.getAttribute("test");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -110,35 +114,36 @@
                 <!-- partial -->
                 <div class="main-panel">
                     <div class="content-wrapper">
-                        <!-- Page Title Header Starts-->
+                        <!-- School Starts Here-->
+                        <% for (School s : test) {%>
                         <div class="row page-title-header">
                             <div class="col-12">
                                 <div class="page-header">
-                                    <h4 class="page-title">School 1</h4>
+                                    <h4 class="page-title"><%=s.getSchlName()%></h4>
                                 </div>
                             </div>
 
                         </div>
                         <!-- Page Title Header Ends-->
-
+                        <% for (Group g : s.getGrps()) {%>
                         <div class="row">
                             <div class="col-md-8 grid-margin stretch-card">
                                 <div class="card card-clickable">
                                     <div class="card-body">
                                         <form action="grpPages" method="post">
-                                            <input type="hidden" name="grp" value="001">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Performance Group #1">
+                                            <input type="hidden" name="grp" value="<%=g.getGID()%>">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="<%=g.getGrpName()%>">
                                         </form>
                                         
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <table>
                                                 <tr>
                                                     <td><span class="card-li-title">Type:</span></td>
-                                                    <td style="padding-right: 4em"><span>Marching Band</span></td>
+                                                    <td style="padding-right: 4em"><span><%=g.getGrpType()%></span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="card-li-title">Size:</span></td>
-                                                    <td style="padding-right: 4em"><span>123</span></td>
+                                                    <td style="padding-right: 4em"><span><%=g.getGrpSize()%></span></td>
                                                 </tr>
                                             </table>
 <!--                                            <ul class="card-ul">
@@ -182,6 +187,8 @@
                                 </div>
                             </div>
                         </div>
+                        <% }%>
+                        <% }%>
                         <div class="row">
                             <div class="col-md-12 grid-margin">
                                 <div class="card card-clickable">
@@ -197,7 +204,7 @@
                                 </div>
                             </div>
                         </div>
-
+                        
                     </div>
                     <!-- content-wrapper ends -->
                     <!-- partial:partials/_footer.html -->

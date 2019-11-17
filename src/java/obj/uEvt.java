@@ -5,13 +5,14 @@
  */
 package obj;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 /**
  *
  * @author tyleryork
  */
-public class uEvt extends uDetail {
+public class uEvt extends uDetail implements Serializable{
     
     private ArrayList<Event> evts;
 
