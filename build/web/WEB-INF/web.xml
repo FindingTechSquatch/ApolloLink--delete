@@ -4,6 +4,26 @@
         <servlet-name>loginCont</servlet-name>
         <servlet-class>controller.loginCont</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>grpBaseCont</servlet-name>
+        <servlet-class>controller.grpBaseCont</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>evtBaseCont</servlet-name>
+        <servlet-class>controller.evtBaseCont</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>objCrtrCont</servlet-name>
+        <servlet-class>controller.objCrtrCont</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>regBaseCont</servlet-name>
+        <servlet-class>controller.regBaseCont</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>configBaseCont</servlet-name>
+        <servlet-class>controller.configBaseCont</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>loginCont</servlet-name>
         <url-pattern>/loginCont</url-pattern>
@@ -11,6 +31,26 @@
     <welcome-file-list>
         <welcome-file>loginCont</welcome-file>
     </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>grpBaseCont</servlet-name>
+        <url-pattern>/grpBaseCont</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>evtBaseCont</servlet-name>
+        <url-pattern>/evtBaseCont</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>objCrtrCont</servlet-name>
+        <url-pattern>/objCrtrCont</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>regBaseCont</servlet-name>
+        <url-pattern>/regBaseCont</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>configBaseCont</servlet-name>
+        <url-pattern>/configBaseCont</url-pattern>
+    </servlet-mapping>
     <session-config>
         <session-timeout>
             30
