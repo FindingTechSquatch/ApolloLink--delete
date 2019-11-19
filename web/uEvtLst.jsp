@@ -141,7 +141,7 @@
                                                     <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
-                                             
+
                                         </div>
                                     </div>
                                 </div>
@@ -150,9 +150,18 @@
                                 <div class="card">
                                     <div class="card-body">
                                         <h4 class="card-title mb-0"> Title </h4>
-                                        <div class="topcorner" input type="checkbox">
-                                            <input type="checkbox" class="btn btn-dark btn-fw" value="choose">
+                                        <div class="topcorner">
+                                            <div class="form-group">
+                                                <div class="form-check">
+                                                    <label class="form-check-label">
+                                                        <input type="checkbox" class="form-check-input">
+                                                    </label>
+                                                </div>
+
+                                            </div>
                                         </div>
+
+
 
                                         <div class="card-list d-flex flex-column flex-lg-row">
                                             <ul class="card-ul">
@@ -166,7 +175,7 @@
                                                     <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
-                                             
+
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +200,7 @@
                                                     <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
-                                             
+
                                         </div>
                                     </div>
                                 </div>
@@ -216,39 +225,39 @@
                                                     <span class="card-li-title">State:</span> NE
                                                 </li>
                                             </ul>
-                                             
+
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                    <!-- content-wrapper ends -->
-                    <!-- partial:partials/_footer.html -->
-                    <footer class="footer">
-                        <div class="container-fluid clearfix">
-                            <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright &#169; 2019 FindingTechSquatch. A division of the TRYHard Lab. All rights reserved.</span>
-                            </span>
+
+                            <!-- content-wrapper ends -->
+                            <!-- partial:partials/_footer.html -->
+                            <footer class="footer">
+                                <div class="container-fluid clearfix">
+                                    <span class="text-muted d-block text-center text-sm-left d-sm-inline-block">Copyright &#169; 2019 FindingTechSquatch. A division of the TRYHard Lab. All rights reserved.</span>
+                                    </span>
+                                </div>
+                            </footer>
+                            <!-- partial -->
                         </div>
-                    </footer>
-                    <!-- partial -->
+                        <!-- main-panel ends -->
+                    </div>
+                    <!-- page-body-wrapper ends -->
                 </div>
-                <!-- main-panel ends -->
-            </div>
-            <!-- page-body-wrapper ends -->
-        </div>
-        <!-- container-scroller -->
-        <!-- plugins:js -->
-        <script src="assets/js/vendor/vendor.bundle.base.js"></script>
-        <script src="assets/js/vendor/vendor.bundle.addons.js"></script>
-        <!-- endinject -->
-        <!-- Plugin js for this page-->
-        <!-- End plugin js for this page-->
-        <!-- inject:js -->
-        <script src="assets/js/vendor/off-canvas.js"></script>
-        <script src="assets/js/vendor/misc.js"></script>
-        <!-- endinject -->
-        <!-- Custom js for this page-->
-        <script src="assets/js/vendor/dashboard.js"></script>
-        <!-- End custom js for this page-->
-    </body>
-</html>
+                <!-- container-scroller -->
+                <!-- plugins:js -->
+                <script src="assets/js/vendor/vendor.bundle.base.js"></script>
+                <script src="assets/js/vendor/vendor.bundle.addons.js"></script>
+                <!-- endinject -->
+                <!-- Plugin js for this page-->
+                <!-- End plugin js for this page-->
+                <!-- inject:js -->
+                <script src="assets/js/vendor/off-canvas.js"></script>
+                <script src="assets/js/vendor/misc.js"></script>
+                <!-- endinject -->
+                <!-- Custom js for this page-->
+                <script src="assets/js/vendor/dashboard.js"></script>
+                <!-- End custom js for this page-->
+                </body>
+                </html>

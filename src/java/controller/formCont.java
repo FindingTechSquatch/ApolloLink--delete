@@ -35,7 +35,7 @@ public class formCont extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession session = request.getSession();
-        String url = "/director/grpNfo.jsp";
+        String url = "/uEvtLst.jsp";
         
         ArrayList<School> test = (ArrayList) session.getAttribute("test");
         

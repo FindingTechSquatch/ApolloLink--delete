@@ -5,6 +5,11 @@
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="java.util.ArrayList, obj.*, java.time.LocalDate, java.time.LocalDateTime, java.time.format.DateTimeFormatter"%>
+<%
+    ArrayList<Event> test2 = (ArrayList) session.getAttribute("test2");
+    DateTimeFormatter f = DateTimeFormatter.ofPattern("MM/dd/yyyy HH:mm");
+%>
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -112,35 +117,48 @@
 
                         </div>
                         <!-- Page Title Header Ends-->
-
+                        <% for (Event e : test2) {%>
                         <div class="row">
                             <div class="col-md-8 grid-margin stretch-card">
                                 <div class="card card-clickable">
                                     <div class="card-body">
                                         <form action="grpPages" method="post">
-                                            <input type="hidden" name="grp" value="001">
-                                            <input type="submit" class="card-clickable-title card-title mb-0" value="Event #1">
+                                            <input type="hidden" name="evt" value="<%=e.getEID()%>">
+                                            <input type="submit" class="card-clickable-title card-title mb-0" value="<%=e.getName()%>">
                                         </form>
-                                        
-                                        <div class="card-list d-flex flex-column flex-lg-row">
-                                            <table>
+
+                                        <div class="card-list flex-column flex-lg-row">
+                                            <div class="row">
+                                                <table class="col-md-6">
                                                 <tr>
                                                     <td><span class="card-li-title">Type:</span></td>
-                                                    <td style="padding-right: 4em"><span>Marching Band</span></td>
+                                                    <td style="padding-right: 4em"><span><%=e.getType()%></span></td>
                                                 </tr>
                                                 <tr>
                                                     <td><span class="card-li-title">Location:</span></td>
-                                                    <td style="padding-right: 4em"><span>Omaha Burke Stadium</span></td>
+                                                    <td style="padding-right: 4em"><span><%=e.getLocTitle()%></span></td>
                                                 </tr>
                                             </table>
-                       <!--                 <ul class="card-ul">
-                                                <li>
-                                                    <span class="card-li-title">Type:</span> Marching Band
-                                                </li>
-                                                <li>
-                                                    <span class="card-li-title">Location:</span> Omaha Burke Stadium
-                                                </li>
-                                            </ul>-->
+                                                <table class="col-md-6">
+                                                <tr>
+                                                    <td><span class="card-li-title">Date:</span></td>
+                                                    <td style="padding-right: 4em"><span><%=e.getStrtDteTm().format(f)%></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td><span class="card-li-title">City, State:</span></td>
+                                                    <td style="padding-right: 4em"><span><%=e.getCity()%>, <%=e.getState()%></span></td>
+                                                </tr>
+                                            </table>
+                                            </div>
+                                            
+                                            <!--                 <ul class="card-ul">
+                                                                     <li>
+                                                                         <span class="card-li-title">Type:</span> Marching Band
+                                                                     </li>
+                                                                     <li>
+                                                                         <span class="card-li-title">Location:</span> Omaha Burke Stadium
+                                                                     </li>
+                                                                 </ul>-->
                                         </div>
                                     </div>
                                 </div>
@@ -158,18 +176,18 @@
                                                     <tr>
                                                         <td>School 2</td>
                                                     </tr>
-                                                    
+
                                                 </table>
-                                                
-                                                
-<!--                                            <ul class="card-ul">
-                                                <li>
-                                                    School 1
-                                                </li>
-                                                <li>
-                                                    School 2
-                                                </li>
-                                            </ul>-->
+
+
+                                                <!--                                            <ul class="card-ul">
+                                                                                                <li>
+                                                                                                    School 1
+                                                                                                </li>
+                                                                                                <li>
+                                                                                                    School 2
+                                                                                                </li>
+                                                                                            </ul>-->
                                             </div>
                                         </div>
 
@@ -177,6 +195,7 @@
                                 </div>
                             </div>
                         </div>
+                        <% }%>
                         <div class="row">
                             <div class="col-md-12 grid-margin">
                                 <div class="card card-clickable">
@@ -185,8 +204,8 @@
                                             <input type="hidden" name="grp" value="000">
                                             <input type="submit" class="card-clickable-title card-title mb-0" value="Add New Event">
                                         </form>
-                                        
-                                      
+
+
                                     </div>
                                 </div>
                             </div>

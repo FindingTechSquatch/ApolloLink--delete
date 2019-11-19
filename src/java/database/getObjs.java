@@ -11,7 +11,9 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.HashSet;
 import obj.*;
@@ -211,6 +213,8 @@ public class getObjs {
     public static ArrayList<Registration> getRegistrationsFromGID(int gid) {
         ArrayList<Registration> returnList = new ArrayList<Registration>();
         Connection db2 = getConnection();
+        
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S");
 
         PreparedStatement ps = null;
         ResultSet rs = null;
@@ -231,7 +235,7 @@ public class getObjs {
                 r.setRID(rs.getInt("RID"));
                 r.setRegDteTm(LocalDateTime.parse(rs.getString("REG_TIME")));
                 r.setType(rs.getString("REG_TYPE"));
-                r.setSelDteTm(LocalDateTime.parse(rs.getString("REG_SEL_TIME_SLOT")));
+                r.setSelDteTm(LocalDateTime.parse(rs.getString("REG_SEL_TIME_SLOT"),f));
                 r.setAddlStff(rs.getString("REG_ADDL_STAFF"));
                 r.setBus(rs.getInt("REG_BUSES"));
                 r.setTruck(rs.getInt("REG_TRUCK"));
@@ -281,7 +285,7 @@ public class getObjs {
         return returnList;
     }
 
-    public static ArrayList<School> getAllFromUID(int uid) {
+    public static ArrayList<School> getAllDirFromUID(int uid) {
         ArrayList<School> returnList = new ArrayList<School>();
 
         try {
@@ -301,4 +305,87 @@ public class getObjs {
 
         return returnList;
     }
+    
+    public static ArrayList<Event> getEventsFromUID(int uid) {
+        ArrayList<Event> returnList = new ArrayList<Event>();
+        Connection db2 = getConnection();
+        
+        DateTimeFormatter f = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S");
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            db2.setAutoCommit(false);
+
+            //<<<<<<<<<<<<<<<< Get All School Info >>>>>>>>>>>>>>>>
+            String sql = "SELECT SCM.E_DETAIL.EID, SCM.E_DETAIL.EVT_NAME, SCM.E_DETAIL.EVT_HOST, SCM.E_DETAIL.EVT_TYPE, SCM.E_DETAIL.EVT_STRT, SCM.E_DETAIL.EVT_END, SCM.E_DETAIL.EVT_BLCKS, "; 
+            sql += "SCM.E_LOCATION.EVT_LOC_TITLE, SCM.E_LOCATION.EVT_ADDR1, SCM.E_LOCATION.EVT_ADDR2, SCM.E_LOCATION.EVT_CITY, SCM.E_LOCATION.EVT_STATE, ";
+            sql += " SCM.E_COST.EVT_EARLY_STRT_DTE, SCM.E_COST.EVT_EARLY_END_DTE, SCM.E_COST.EVT_REG_STRT_DTE, SCM.E_COST.EVT_REG_END_DTE, SCM.E_COST.EVT_LATE_STRT_DTE, SCM.E_COST.EVT_LATE_END_DTE, SCM.E_COST.EVT_EARLY_COST, SCM.E_COST.EVT_REG_COST, SCM.E_COST.EVT_LATE_COST ";
+            sql += " FROM SCM.E_DETAIL JOIN SCM.E_LOCATION on SCM.E_DETAIL.EID = SCM.E_LOCATION.EID";
+            sql += " JOIN SCM.E_COST ON SCM.E_DETAIL.EID = SCM.E_COST.EID";
+            sql += " JOIN SCM.X_UID_EID ON SCM.E_DETAIL.EID = SCM.X_UID_EID.EID WHERE SCM.X_UID_EID.UID = ? ORDER BY SCM.E_DETAIL.EVT_STRT";
+            ps = db2.prepareStatement(sql);
+            ps.setInt(1, uid);
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                Event e = new Event();
+                e.setEID(rs.getInt("EID"));
+                e.setName(rs.getString("EVT_NAME"));
+                e.setHost(rs.getString("EVT_HOST"));
+                e.setType(rs.getString("EVT_TYPE"));
+                e.setStrtDteTm(LocalDateTime.parse(rs.getString("EVT_STRT"),f));
+                e.setEndDteTm(LocalDateTime.parse(rs.getString("EVT_END"),f));
+                e.setBlckSize(rs.getInt("EVT_BLCKS"));
+                e.setLocTitle(rs.getString("EVT_LOC_TITLE"));
+                e.setAddr1(rs.getString("EVT_ADDR1"));
+                e.setAddr2(rs.getString("EVT_ADDR2"));
+                e.setCity(rs.getString("EVT_CITY"));
+                e.setState(rs.getString("EVT_STATE"));
+                e.setRegEarlyStrtDte(LocalDate.parse(rs.getString("EVT_EARLY_STRT_DTE")));
+                e.setRegEarlyEndDte(LocalDate.parse(rs.getString("EVT_EARLY_END_DTE")));
+                e.setRegRegStrtDte(LocalDate.parse(rs.getString("EVT_REG_STRT_DTE")));
+                e.setRegRegEndDte(LocalDate.parse(rs.getString("EVT_REG_END_DTE")));
+                e.setRegLtStrtDte(LocalDate.parse(rs.getString("EVT_LATE_STRT_DTE")));
+                e.setRegLtEndDte(LocalDate.parse(rs.getString("EVT_LATE_END_DTE")));
+                e.setRegEarlyCst(rs.getDouble("EVT_EARLY_COST"));
+                e.setRegRegCst(rs.getDouble("EVT_REG_COST"));
+                e.setRegLtCst(rs.getDouble("EVT_LATE_COST"));
+                returnList.add(e);
+            }
+
+            //<<<<<<<<<<<<<<<< Final Commit for New User >>>>>>>>>>>>>>>>
+            db2.commit();
+            rs.close();
+            ps.close();
+            db2.close();
+        } catch (SQLException e) {
+            System.out.println("Database currently unavailable." + e);
+
+            try {
+                if (db2 != null) {
+                    db2.rollback();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database is currently unavailable " + se);
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (db2 != null) {
+                    db2.close();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database currently unavailable." + se);
+            }
+        }
+
+        return returnList;
+    }
+    
 }
