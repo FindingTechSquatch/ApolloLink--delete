@@ -67,19 +67,19 @@
                                                 <% }%>
                                             </ul>
                                         </div>
-                                        <form action="j_security_check" method="post">
-                                            <!--<input type="hidden" name="act" value="lg">-->
+                                        <form action="loginCont" method="post">
+                                            <input type="hidden" name="act" value="lg">
                                             <div class="field-wrap">
                                                 <label>
                                                     Email<span class="req">*</span>
                                                 </label>
-                                                <input class="loginInput" name="j_username" type="text" autocomplete="off"/>
+                                                <input class="loginInput" name="us" type="text" autocomplete="off"/>
                                             </div>
                                             <div class="field-wrap">
                                                 <label>
                                                     Password<span class="req">*</span>
                                                 </label>
-                                                <input class="loginInput" name="j_password" type="password" autocomplete="off"/>
+                                                <input class="loginInput" name="pw" type="password" autocomplete="off"/>
                                             </div>
                                             <!--TODO
                                             <p class="forgot"><a href="#">Forgot Password?</a></p>

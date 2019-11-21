@@ -39,10 +39,9 @@ public class loginCont extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String url = "/index.jsp";
-        String leTest = ec.EC_dpw("Password");
+
         
-        ArrayList<School> test = getObjs.getAllDirFromUID(1);
-        ArrayList<Event> test2 = getObjs.getEventsFromUID(25);
+        
 
         HttpSession session = request.getSession();
 
@@ -64,10 +63,8 @@ public class loginCont extends HttpServlet {
             session.setAttribute("er2", lgError1);
             ArrayList<School> schl = dbSignIn.getAllSchools();
             session.setAttribute("schl", schl);
-            session.setAttribute("test", test);
-            session.setAttribute("test2", test2);
 
-            //needs to load schools
+            
         } else if (action.equalsIgnoreCase("su")) { //sign up
             session.setAttribute("hd1", "hidden");
             session.setAttribute("hd2", "hidden");
@@ -286,6 +283,10 @@ public class loginCont extends HttpServlet {
                
                 if(dbSignIn.loginUser(frstUsr) == 1) {
                     //get user values
+                    uDir lgnDir = dbSignIn.getDirectorfromUS(frstUsr);
+                    url = "/grpBaseCont";
+                    session.setAttribute("usr", lgnDir);
+                    
                     
                 } else {
                     url = "/index.jsp";

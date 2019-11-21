@@ -23,7 +23,7 @@ public class ec {
     public static String EC_dpw(String ec) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-
+            
             // digest() method called  
             // to calculate message digest of an input  
             // and return array of byte 
@@ -56,7 +56,7 @@ public class ec {
        
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-
+            ec = ec.toUpperCase();
             // digest() method called  
             // to calculate message digest of an input  
             // and return array of byte 
@@ -120,7 +120,7 @@ public class ec {
     public static String EC_eus(String ec) {
         try {
             MessageDigest md = MessageDigest.getInstance("SHA-256");
-
+            ec = ec.toUpperCase();
             // digest() method called  
             // to calculate message digest of an input  
             // and return array of byte 

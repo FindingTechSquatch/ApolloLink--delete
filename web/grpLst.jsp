@@ -4,10 +4,11 @@
     Author     : tyleryork
 --%>
 
+<%@page import="java.time.LocalDateTime"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@page import="java.util.ArrayList, obj.*"%>
 <%
-    ArrayList<School> test = (ArrayList) session.getAttribute("test");
+    ArrayList<School> usr_Schls = (ArrayList) session.getAttribute("usr_Schls");
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -115,7 +116,7 @@
                 <div class="main-panel">
                     <div class="content-wrapper">
                         <!-- School Starts Here-->
-                        <% for (School s : test) {%>
+                        <% for (School s : usr_Schls) {%>
                         <div class="row page-title-header">
                             <div class="col-12">
                                 <div class="page-header">
@@ -127,7 +128,7 @@
                         <!-- Page Title Header Ends-->
                         <% for (Group g : s.getGrps()) {%>
                         <div class="row">
-                            <div class="col-md-8 grid-margin stretch-card">
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card card-clickable">
                                     <div class="card-body">
                                         <form action="grpPages" method="post">
@@ -158,7 +159,11 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 grid-margin stretch-card">
+                             <%ArrayList<obj.Registration> r = new ArrayList<obj.Registration>();%>
+                             <%for(obj.Registration r2 : g.getRegs()) {%>
+                             <%if(r2.getSelDteTm().isAfter(LocalDateTime.now())) {%>
+                             <% r.add(r2); } }%>
+                            <div class="col-md-6 grid-margin stretch-card">
                                 <div class="card">
                                     <div class="card-body d-flex flex-column">
                                         <div class="wrapper">
@@ -166,10 +171,18 @@
                                             <div class="card-list d-flex flex-column flex-lg-row">
                                                 <table>
                                                     <tr>
-                                                        <td>Event 1</td>
+                                                        <td><%if(r.size() == 0){%>
+                                                            No Upcoming Events
+                                                            <%} else {%>
+                                                            <%=r.get(0).getSelDteTm()%>
+                                                            <%}%></td>
                                                     </tr>
                                                     <tr>
-                                                        <td>Event 2</td>
+                                                        <td><%if(r.size() < 2){%>
+                                                            No Upcoming Events
+                                                            <%} else {%>
+                                                            <%=r.get(1).getSelDteTm()%>
+                                                            <%}%></td>
                                                     </tr>
                                                 </table>
 <!--                                            <ul class="card-ul">

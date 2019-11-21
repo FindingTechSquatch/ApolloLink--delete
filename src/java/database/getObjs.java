@@ -6,6 +6,7 @@
 package database;
 
 import static database.db2_conn.getConnection;
+import encrypt.ec;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -226,7 +227,7 @@ public class getObjs {
             String sql = "SELECT SCM.R_DETAIL.RID, SCM.R_DETAIL.REG_TIME, SCM.R_DETAIL.REG_TYPE, SCM.R_DETAIL.REG_SEL_TIME_SLOT, SCM.R_DETAIL.REG_ADDL_STAFF, SCM.R_DETAIL.REG_BUSES, SCM.R_DETAIL.REG_TRUCK, ";
             sql += "SCM.R_PERFORMANCE.REG_PERF_TITLE, SCM.R_PERFORMANCE.REG_SONG1, SCM.R_PERFORMANCE.REG_SONG2, SCM.R_PERFORMANCE.REG_SONG3, SCM.R_PERFORMANCE.REG_SONG4, SCM.R_PERFORMANCE.REG_SONG5, SCM.R_PERFORMANCE.REG_PRE_ANNOUNCE, SCM.R_PERFORMANCE.REG_POST_ANNOUNCE ";
             sql += " FROM SCM.R_DETAIL JOIN SCM.R_PERFORMANCE ON SCM.R_DETAIL.RID = SCM.R_PERFORMANCE.RID ";
-            sql += " JOIN SCM.X_GID_RID ON SCM.R_DETAIL.RID = SCM.X_GID_RID.RID WHERE SCM.X_GID_RID.GID = ?";
+            sql += " JOIN SCM.X_GID_RID ON SCM.R_DETAIL.RID = SCM.X_GID_RID.RID WHERE SCM.X_GID_RID.GID = ? ORDER BY REG_SEL_TIME_SLOT";
             ps = db2.prepareStatement(sql);
             ps.setInt(1, gid);
             rs = ps.executeQuery();
@@ -387,5 +388,7 @@ public class getObjs {
 
         return returnList;
     }
+    
+    
     
 }

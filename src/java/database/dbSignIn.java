@@ -196,6 +196,7 @@ public class dbSignIn {
 
         return u;
     }
+    
     public static int loginUser(uBase u) {
         int success = 0;
         
@@ -208,7 +209,7 @@ public class dbSignIn {
             db2.setAutoCommit(false);
 
             //<<<<<<<<<<<<<<<< INSERT INTO U_CRED >>>>>>>>>>>>>>>>
-            String sql = "SELECT COUNT(*) FROM SCM.U_CRED WHERE USR_H = ? AND PSWD_H = ?";
+            String sql = "SELECT COUNT(*) FROM SCM.U_CRED WHERE EMAIL = ? AND PSWD_H = ?";
             ps = db2.prepareStatement(sql);
             ps.setString(1, u.getHus());
             ps.setString(2, u.getHpw());
@@ -219,9 +220,7 @@ public class dbSignIn {
 
             //<<<<<<<<<<<<<<<< Final Commit for New User >>>>>>>>>>>>>>>>
             db2.commit();
-            rs.close();
-            ps.close();
-            db2.close();
+
         } catch (SQLException e) {
             System.out.println("Database currently unavailable." + e);
             
@@ -252,4 +251,119 @@ public class dbSignIn {
         
         return success;
     }
+    
+    public static int getUIDfromUS(uBase u) {
+        int returnInt = 0;
+        Connection db2 = getConnection();
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            db2.setAutoCommit(false);
+
+            //<<<<<<<<<<<<<<<< Get All School Info >>>>>>>>>>>>>>>>
+            String sql = "SELECT SCM.U_CRED.UID FROM SCM.U_CRED WHERE EMAIL = ?";
+            ps = db2.prepareStatement(sql);
+            ps.setString(1, u.getHus());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                returnInt = rs.getInt("UID");
+            }
+
+            //<<<<<<<<<<<<<<<< Final Commit for New User >>>>>>>>>>>>>>>>
+            db2.commit();
+            rs.close();
+            ps.close();
+            db2.close();
+        } catch (SQLException e) {
+            System.out.println("Database currently unavailable." + e);
+
+            try {
+                if (db2 != null) {
+                    db2.rollback();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database is currently unavailable " + se);
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (db2 != null) {
+                    db2.close();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database currently unavailable." + se);
+            }
+        }
+        return returnInt;
+    }
+    
+    public static uDir getDirectorfromUS(uBase u) {
+        uDir v = new uDir();
+        v.setUus(u.getUus());
+        v.setHus(u.getHus());
+        v.setHpw(u.getHpw());
+        
+        v.setUid(getUIDfromUS(u));
+        Connection db2 = getConnection();
+
+        PreparedStatement ps = null;
+        ResultSet rs = null;
+
+        try {
+            db2.setAutoCommit(false);
+
+            //<<<<<<<<<<<<<<<< Get All School Info >>>>>>>>>>>>>>>>
+            String sql = "SELECT FIRST_NAME, LAST_NAME, PHONE FROM SCM.U_DETAIL WHERE UID = ?";
+            ps = db2.prepareStatement(sql);
+            ps.setInt(1, v.getUid());
+            rs = ps.executeQuery();
+            while (rs.next()) {
+                v.setfName(rs.getString("FIRST_NAME"));
+                v.setlName(rs.getString("LAST_NAME"));
+                v.setPhone(rs.getString("PHONE"));
+            }
+
+            //<<<<<<<<<<<<<<<< Final Commit for New User >>>>>>>>>>>>>>>>
+            db2.commit();
+            rs.close();
+            ps.close();
+            db2.close();
+        } catch (SQLException e) {
+            System.out.println("Database currently unavailable." + e);
+
+            try {
+                if (db2 != null) {
+                    db2.rollback();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database is currently unavailable " + se);
+            }
+        } finally {
+            try {
+                if (rs != null) {
+                    rs.close();
+                }
+                if (ps != null) {
+                    ps.close();
+                }
+                if (db2 != null) {
+                    db2.close();
+                }
+            } catch (SQLException se) {
+                System.out.println("Database currently unavailable." + se);
+            }
+        }
+        
+        v.setSchls(getObjs.getAllDirFromUID(v.getUid()));
+        
+        return v;
+    }
+            
 }
